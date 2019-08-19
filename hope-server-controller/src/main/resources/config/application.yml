@@ -9,6 +9,7 @@ spring:
   cloud:
     discovery:
       enabled: true
+
 server:
   port: 4672
 eureka:
