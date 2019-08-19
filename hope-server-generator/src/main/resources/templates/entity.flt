@@ -1,0 +1,53 @@
+package ${packageName}.${tabChFileName}.domain;
+
+import base.BaseEntity;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+
+/**
+ * @author ${author}
+ */
+
+@Data
+@Getter
+@Setter
+@TableName("${tableName}")
+public class ${tableChName}Entity extends BaseEntity{
+
+   <#list columns as model>
+   <#if (model.getColumnChName()!='createdBy'
+            && model.getColumnChName()!='createdDate'
+            && model.getColumnChName()!='lastModifiedBy'
+            && model.getColumnChName()!='lastModifiedDate'
+            && model.getColumnChName()!='versionLock')>
+    /**
+     * ${model.getRemark()}
+     */
+    <#if (model.getTypeCode()='VARCHAR' || model.getTypeCode()='TEXT' || model.getTypeCode()='TIMESTAMP')>
+    private String ${model.getColumnChName()};
+    </#if>
+    <#if (model.getTypeCode()='DATETIME')>
+    private String ${model.getColumnChName()};
+    </#if>
+    <#if (model.getTypeCode()='INT')>
+    private int ${model.getColumnChName()};
+    </#if>
+    <#if (model.getTypeCode()='DECIMAL')>
+    private double ${model.getColumnChName()};
+    </#if>
+    <#if (model.getTypeCode()='INT UNSIGNED')>
+    private int ${model.getColumnChName()};
+    </#if>
+    <#if (model.getTypeCode()='DATE')>
+    private String ${model.getColumnChName()};
+    </#if>
+    <#if (model.getTypeCode()='TINYINT')>
+    private int ${model.getColumnChName()};
+</#if>
+   </#if>
+    </#list>
+
+}

@@ -1,0 +1,13 @@
+package ${packageName}.${tabChFileName}.mapper;
+
+import base.BaseFrameMapper;
+import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * @author ${author}
+ */
+@Mapper
+public interface ${tableChName}Mapper extends BaseFrameMapper<${tableChName}Entity> {
+
+}

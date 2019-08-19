@@ -1,0 +1,20 @@
+package ${packageName}.${tabChFileName}.service.impl;
+
+import base.BaseServiceImpl;
+import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
+import ${packageName}.${tabChFileName}.mapper.${tableChName}Mapper;
+import ${packageName}.${tabChFileName}.service.${tableChName}Service;
+import org.springframework.stereotype.Service;
+
+/**
+ * @author ${author}
+ */
+@Service
+public class ${tableChName}ServiceImpl extends BaseServiceImpl<${tableChName}Mapper, ${tableChName}Entity> implements ${tableChName}Service {
+
+    private ${tableChName}Mapper ${tabChFileName}Mapper;
+
+    public ${tableChName}ServiceImpl(${tableChName}Mapper ${tabChFileName}Mapper) {
+        this.${tabChFileName}Mapper = ${tabChFileName}Mapper;
+    }
+}

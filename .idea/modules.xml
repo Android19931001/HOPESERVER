@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HOPESERVER.iml" filepath="$PROJECT_DIR$/HOPESERVER.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hope-server-base/hope-server-base.iml" filepath="$PROJECT_DIR$/hope-server-base/hope-server-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hope-server-controller/hope-server-controller.iml" filepath="$PROJECT_DIR$/hope-server-controller/hope-server-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hope-server-eureka/hope-server-eureka.iml" filepath="$PROJECT_DIR$/hope-server-eureka/hope-server-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hope-server-gateway/hope-server-gateway.iml" filepath="$PROJECT_DIR$/hope-server-gateway/hope-server-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hope-server-generator/hope-server-generator.iml" filepath="$PROJECT_DIR$/hope-server-generator/hope-server-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hoper-server-service/hoper-server-service.iml" filepath="$PROJECT_DIR$/hoper-server-service/hoper-server-service.iml" />
+    </modules>
+  </component>
+</project>

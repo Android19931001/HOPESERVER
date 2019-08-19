@@ -1,0 +1,29 @@
+package com.hope.controller.omCustCashBase.client;
+
+import com.hope.controller.omCustCashBase.dto.OmCustCashBaseDto;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * @author wangning
+ */
+@FeignClient(value = "${instance.Service.ServiceName}")
+public interface OmCustCahsBaseClient {
+
+
+//    通过FeignClient调用service接口时参数的前的注解中需要加入入参名称
+//    ======例如：getOmCustCashBaseById(@PathVariable String id)
+//    修改成=====》getOmCustCashBaseById(@PathVariable("id") String id)
+
+    /**
+     * 通过id获取对象
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET, value = "/webservice/omCustCashBase/select/{id}")
+    ResponseEntity<OmCustCashBaseDto> getOmCustCashBaseById(@PathVariable("id") String id);
+}

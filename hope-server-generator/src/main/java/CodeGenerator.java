@@ -1,0 +1,74 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import utils.ChangeUtils;
+import utils.FileGenerator;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.Scanner;
+
+/**
+ * @author wangning
+ */
+public class CodeGenerator {
+    /**
+     * 数据库连接地址
+     */
+    private static final String DATA_BASE_URL = "jdbc:mysql://10.102.100.132:3306/fls_dev?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false";
+
+    /**
+     * 数据登录用户名
+     */
+    private static final String DATA_BASE_USER = "fls_dev";
+
+    /**
+     * 数据登录密码
+     */
+    private static final String DATA_BASE_PWD = "Fls_dev@123";
+
+    /**
+     * 数据库链接驱动
+     */
+    private  static final String dbDriver = "com.mysql.cj.jdbc.Driver";
+
+    /**
+     * java文件生成路径
+     */
+    public static String JAVA_FILE_PATH = System.getProperty("user.dir") + "/%s/src/main/java/%s/";
+
+    private static Logger logger = LoggerFactory.getLogger(CodeGenerator.class);
+
+//    om_cust_cash_base
+
+    public static void main(String[] args) throws Exception {
+        System.out.println("请输入模块包名：例如（hope-frame-controller）");
+        Scanner scanner = new Scanner(System.in);
+        String moduleName = scanner.next().trim();
+        System.out.println("请输入表名称：例如（app_name_check）");
+        String tableName = scanner.next().trim();
+        System.out.println("请输入包名：例如（com.hope.frame）");
+        String packageName = scanner.next().trim();
+        String filePath = String.format(JAVA_FILE_PATH, moduleName, packageName.replace(".", "/")) + ChangeUtils.toFileDirName(tableName) + "/";
+        System.out.println("文件输入路径：=========== " + filePath);
+        Connection connection = getConnection();
+        if (null != connection) {
+            DatabaseMetaData metaData = connection.getMetaData();
+            ResultSet resultSet = metaData.getColumns(null, "%", tableName, "%");
+            FileGenerator.instance(packageName, tableName, filePath).generatorFile(resultSet);
+            logger.error("=================={}==================","All files were created successfully");
+        }
+    }
+
+    /**
+     * 获取数据库连接器
+     *
+     * @return
+     * @throws Exception
+     */
+    private static Connection getConnection() throws Exception {
+        Class.forName(dbDriver);
+        return DriverManager.getConnection(DATA_BASE_URL, DATA_BASE_USER, DATA_BASE_PWD);
+    }
+}

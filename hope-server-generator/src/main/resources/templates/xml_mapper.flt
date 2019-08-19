@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${packageName}.${tabChFileName}.mapper.${tableChName}Mapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="${packageName}.${tabChFileName}.domain.${tableChName}Entity">
+        <id column="id" property="id" />
+    <#list columns as column>
+    <#if (column.getColumName()!='id')>
+        <result column="${column.getColumName()}" property="${column.getColumnChName()}"/>
+    </#if>
+    </#list>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id<#list columns as column><#if (column.getColumName()!='id')>,${column.getColumName()} AS ${column.getColumnChName()}</#if></#list>
+    </sql>
+
+</mapper>
