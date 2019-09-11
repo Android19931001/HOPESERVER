@@ -16,17 +16,17 @@ public class CodeGenerator {
     /**
      * 数据库连接地址
      */
-    private static final String DATA_BASE_URL = "jdbc:mysql://10.102.100.132:3306/fls_dev?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false";
+    private static final String DATA_BASE_URL = "jdbc:mysql://106.13.73.88:3306/littleflydragon?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false";
 
     /**
      * 数据登录用户名
      */
-    private static final String DATA_BASE_USER = "fls_dev";
+    private static final String DATA_BASE_USER = "root";
 
     /**
      * 数据登录密码
      */
-    private static final String DATA_BASE_PWD = "Fls_dev@123";
+    private static final String DATA_BASE_PWD = "feilong@1993";
 
     /**
      * 数据库链接驱动
