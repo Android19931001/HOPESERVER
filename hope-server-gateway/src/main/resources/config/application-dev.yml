@@ -1,3 +1,36 @@
 spring:
+  application:
+    name: hope-gateway-app
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      routes:
+      - id: hope-controller
+        uri: http://106.13.73.88:4672/hope-controller/
+        predicates:
+          - Path=/hope-gateway/**
+        filters:
+#          不处理请求路径时转发的路由带有hope-gateway前缀，需要去掉该前缀
+#          例如： URI：http://localhost:4672/hope-controller/  PATH: /hope-gateway/**
+#          当StripPrefix=1时，转发后的路径为：http://localhost:4672/hope-controller/
+#          当StripPrefix=2时，转发后的路径为：http://localhost:4672/
+          - StripPrefix=1
   profiles:
     active: true
+
+server:
+  port: 4673
+eureka:
+  client:
+    service-url:
+      defaultZone: http://hopeuser:hopepassword123@mireureka:4670/eureka/
+    instance:
+      prefer-ip-address: true
+      instance-id: hope-gateway-client
+
+
+hope:
+  header:
+    hopeheaderkey: A-Hope-Header-Key
+    hopeheadervalue: hope-create-server-value
