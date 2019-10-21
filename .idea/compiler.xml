@@ -14,7 +14,7 @@
         <module name="hoper-server-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="hope-server-base" target="1.8" />
       <module name="hope-server-controller" target="1.8" />
       <module name="hope-server-eureka" target="1.8" />
