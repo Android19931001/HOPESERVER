@@ -7,10 +7,6 @@
     <artifactId>server</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>hope-server-base</module>
-        <module>hope-server-generator</module>
-    </modules>
 
     <dependencies>
         <!-- 用来实现mapper,Iservice,ServiceImpl的依赖-->
