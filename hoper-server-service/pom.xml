@@ -10,7 +10,8 @@
     </parent>
     <groupId>com.hope</groupId>
     <artifactId>service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-service</version>
+    <packaging>war</packaging>
     <name>service</name>
     <description>service app</description>
 

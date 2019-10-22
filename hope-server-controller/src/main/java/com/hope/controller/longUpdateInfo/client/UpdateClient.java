@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * @author wangning
+ */
 @FeignClient(value = "${instance.Service.ServiceName}")
-
 public interface UpdateClient {
 
     //    通过FeignClient调用service接口时参数的前的注解中需要加入入参名称

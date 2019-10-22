@@ -12,7 +12,6 @@
         <module name="hope-server-gateway" />
         <module name="hope-server-generator" />
         <module name="hoper-server-service" />
-        <module name="HOPESERVER" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">

@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
       - id: hope-controller
-        uri: http://localhost:4672/hope-controller/
+        uri: http://106.13.73.88:4672/hope-controller/
         predicates:
           - Path=/hope-gateway/**
         filters:
@@ -16,6 +16,8 @@ spring:
 #          当StripPrefix=1时，转发后的路径为：http://localhost:4672/hope-controller/
 #          当StripPrefix=2时，转发后的路径为：http://localhost:4672/
           - StripPrefix=1
+  profiles:
+    active: true
 
 server:
   port: 4673

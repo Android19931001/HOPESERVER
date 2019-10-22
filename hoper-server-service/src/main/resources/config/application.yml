@@ -9,6 +9,8 @@ spring:
   cloud:
     discovery:
       enabled: true
+  profiles:
+    active: true
 server:
   port: 4671
 eureka:

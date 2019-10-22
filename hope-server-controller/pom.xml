@@ -10,7 +10,8 @@
     </parent>
     <groupId>com.hope</groupId>
     <artifactId>controller</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-controller</version>
+    <packaging>war</packaging>
     <name>controller</name>
     <description>hope controller</description>
 

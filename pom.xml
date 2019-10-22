@@ -5,8 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hope</groupId>
     <artifactId>server</artifactId>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>hope-server-base</module>
+        <module>hope-server-controller</module>
+        <module>hope-server-eureka</module>
+        <module>hope-server-gateway</module>
+        <module>hoper-server-service</module>
+    </modules>
+
+    <!-- 集中定义依赖版本号与基本配置 -->
+    <properties>
+        <!--指定jdk的版本为1.8，默认为1.6-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
         <!-- 用来实现mapper,Iservice,ServiceImpl的依赖-->
@@ -66,6 +82,13 @@
                     <webXml>WebRoot\WEB-INF\web.xml</webXml>
                     <!-- 指定jsp、js、css的路劲 -->
                     <warSourceDirectory>WebRoot</warSourceDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>    <!--默认关掉单元测试 -->
                 </configuration>
             </plugin>
         </plugins>
