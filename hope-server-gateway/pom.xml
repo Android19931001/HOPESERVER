@@ -11,7 +11,7 @@
     <groupId>com.hope</groupId>
     <artifactId>gateway</artifactId>
     <version>0.0.1-gateway</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>gateway</name>
     <description>gateway app</description>
 

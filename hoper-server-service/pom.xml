@@ -11,7 +11,7 @@
     <groupId>com.hope</groupId>
     <artifactId>service</artifactId>
     <version>0.0.1-service</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>service</name>
     <description>service app</description>
 

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.hope</groupId>
 	<artifactId>eureka</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<version>0.0.1-eureka</version>
 	<name>eureka</name>
 	<description>eureka app</description>
