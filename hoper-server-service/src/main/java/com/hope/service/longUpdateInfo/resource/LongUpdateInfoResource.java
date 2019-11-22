@@ -18,7 +18,7 @@ import utils.Result;
  * @author wangning
  */
 @RestController
-@RequestMapping("/webservice")
+@RequestMapping("/api")
 public class LongUpdateInfoResource {
 
     private Logger logger = LoggerFactory.getLogger(LongUpdateInfoResource.class);
@@ -33,7 +33,7 @@ public class LongUpdateInfoResource {
      * @return
      */
     @Timed(millis = Contants.TIME_PRIOD)
-    @GetMapping("longUpdateInfo/select/{id}")
+    @GetMapping("/longUpdateInfo/select/{id}")
     public ResponseEntity<LongUpdateInfoEntity> selectLongUpdateInfoById(@PathVariable String id) {
         logger.info("查询的Id === {}", id);
         LongUpdateInfoEntity longUpdateInfoEntity = longUpdateInfoService.getById(id);
@@ -47,7 +47,7 @@ public class LongUpdateInfoResource {
      * @return
      */
     @Timed(millis = Contants.TIME_PRIOD)
-    @DeleteMapping("longUpdateInfo/remove/{id}")
+    @DeleteMapping("/longUpdateInfo/remove/{id}")
     public BaseNoResp<Boolean> removeLongUpdateInfoById(@PathVariable String id) {
         logger.info("删除操作id === {}", id);
         return Result.noBody(longUpdateInfoService.removeById(id));
@@ -60,7 +60,7 @@ public class LongUpdateInfoResource {
      * @return
      */
     @Timed(millis = Contants.TIME_PRIOD)
-    @PostMapping("longUpdateInfo/saveOrUpdate")
+    @PostMapping("/longUpdateInfo/saveOrUpdate")
     public ResponseEntity<LongUpdateInfoEntity> saveLongUpdateInfo(@RequestBody LongUpdateInfoEntity longUpdateInfoEntity) {
         logger.info("添加操作 === {}", longUpdateInfoEntity);
         longUpdateInfoService.saveOrUpdate(longUpdateInfoEntity);
