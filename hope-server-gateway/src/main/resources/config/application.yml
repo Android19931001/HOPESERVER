@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
       - id: hope-controller
-        uri: http://106.13.73.88:4672/hope-controller/
+        uri: http://localhost:4672/hope-controller/
         predicates:
           - Path=/hope-gateway/**
         filters:
