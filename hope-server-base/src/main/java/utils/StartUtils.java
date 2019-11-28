@@ -1,9 +1,9 @@
 package utils;
 
-import org.slf4j.Logger;
 import org.springframework.core.env.Environment;
 
 import java.net.InetAddress;
+import java.util.logging.Logger;
 
 /**
  * @author wangning
@@ -21,10 +21,10 @@ public class StartUtils {
         try {
             String serverPort = environment.getProperty("server.port");
             String address = InetAddress.getLocalHost().getHostAddress();
-            logger.info("\n-----------------------The request url is-----------------------" +
+            /*logger.info("\n-----------------------The request url is-----------------------" +
                             "\n\tLocal: {}://localhost:{}\n\tExternal: {}://{}:{}" +
                             "\n-----------------------The server is start-----------------------"
-                    , protocol, serverPort, protocol, address, serverPort);
+                    , protocol, serverPort, protocol, address, serverPort);*/
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,9 +42,9 @@ public class StartUtils {
             String serverPort = environment.getProperty("server.port");
             String hostName = environment.getProperty("eureka.instance.hostname");
             String address = InetAddress.getLocalHost().getHostAddress();
-            logger.info("\n-----------------------The request url is-----------------------" +
+            /*logger.info("\n-----------------------The request url is-----------------------" +
                             "\n\teureka: {}://{}:{}/eureka/\n " + "\n---------------------- - The server is start---------------------- - "
-                    , protocol, hostName, serverPort);
+                    , protocol, hostName, serverPort);*/
         } catch (Exception e) {
             e.printStackTrace();
         }
