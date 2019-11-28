@@ -72,12 +72,6 @@
             <version>1.18.4</version>
         </dependency>
         <!-- 处理实体累的工具，可以实现set，get方法-->
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>

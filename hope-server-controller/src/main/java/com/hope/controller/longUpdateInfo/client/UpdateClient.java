@@ -23,6 +23,6 @@ public interface UpdateClient {
      * @param id
      * @return
      */
-    @RequestMapping(method = RequestMethod.GET, value = "/webservice/longUpdateInfo/select/{id}")
+    @RequestMapping(method = RequestMethod.GET, value = "/api/longUpdateInfo/select/{id}")
     ResponseEntity<UpdateInfo> queryUpdateInfoById(@PathVariable("id") String id);
 }

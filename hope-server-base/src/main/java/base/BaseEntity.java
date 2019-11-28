@@ -15,13 +15,13 @@ import java.time.Instant;
 @Setter
 public class BaseEntity implements Serializable {
 
-    public Instant createdDate;
-
-    public Instant lastModifiedDate;
-
-    public String createdBy;
-
-    public String lastModifiedBy;
-
-    public int versionLock;
+//    public Instant createdDate;
+//
+//    public Instant lastModifiedDate;
+//
+//    public String createdBy;
+//
+//    public String lastModifiedBy;
+//
+//    public int versionLock;
 }

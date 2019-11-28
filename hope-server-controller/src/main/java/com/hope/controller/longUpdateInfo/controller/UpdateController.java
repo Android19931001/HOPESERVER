@@ -21,7 +21,7 @@ import utils.Result;
  * @author wangning
  */
 @RestController
-@RequestMapping("/hope-controller")
+@RequestMapping("/webservice")
 public class UpdateController {
 
     private Logger logger = LoggerFactory.getLogger(UpdateController.class);
@@ -30,7 +30,7 @@ public class UpdateController {
     UpdateClient updateClient;
 
     @Timed(millis = Contants.TIME_PRIOD)
-    @GetMapping("/queryUpdateInfo/")
+    @GetMapping("/queryUpdateInfo/{id}")
     public BaseRes<UpdateInfo> queryUpdateInfoById(@PathVariable String id) {
         logger.info("查询app版本信息id===" + id);
         if (StringUtils.isEmpty(id)) {
