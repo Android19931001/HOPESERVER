@@ -5,8 +5,6 @@ import base.BaseNoResp;
 import com.hope.service.longUpdateInfo.domain.LongUpdateInfoEntity;
 import com.hope.service.longUpdateInfo.service.impl.LongUpdateInfoServiceImpl;
 import contant.Contants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Timed;
@@ -21,7 +19,6 @@ import utils.Result;
 @RequestMapping("/api")
 public class LongUpdateInfoResource {
 
-//    private Logger logger = LoggerFactory.getLogger(LongUpdateInfoResource.class);
 
     @Autowired
     LongUpdateInfoServiceImpl longUpdateInfoService;
