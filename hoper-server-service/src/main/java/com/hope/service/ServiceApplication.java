@@ -1,5 +1,7 @@
 package com.hope.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -17,7 +19,7 @@ import utils.StartUtils;
 //@EnableEurekaClient
 public class ServiceApplication {
 
-//    private static Logger logger = LoggerFactory.getLogger(ServiceApplication.class);
+    private static Logger logger = LoggerFactory.getLogger(ServiceApplication.class);
 
     @Bean
 //    @LoadBalanced
