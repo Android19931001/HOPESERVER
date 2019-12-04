@@ -1,4 +1,3 @@
-#!/bin/bash -ilex
 #!/usr/bin/env groovy
 
 node {
@@ -24,7 +23,7 @@ node {
     def dockerImage
     stage('build docker') {
         sh "cp -R hoper-server-service/src/main/docker hoper-server-service/target/"
-        sh "cp hoper-server-service/target/*.jar hoper-server-service/target/docker/"
+        sh "cp hoper-server-service/target/*.war hoper-server-service/target/docker/"
         dockerImage = docker.build('hope-service', 'hoper-server-service/target/docker')
     }
 

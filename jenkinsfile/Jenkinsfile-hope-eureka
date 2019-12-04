@@ -23,12 +23,12 @@ node {
     def dockerImage
     stage('build docker') {
         sh "cp -R hope-server-eureka/src/main/docker hope-server-eureka/target/"
-        sh "cp hope-server-eureka/target/*.jar hope-server-eureka/target/docker/"
+        sh "cp hope-server-eureka/target/*.war hope-server-eureka/target/docker/"
         dockerImage = docker.build('hope-eureka', 'hope-server-eureka/target/docker')
     }
 
 
     stage('run docker') {
-        sh "docker run -d  --name=hope-server-eureka -p 8081:4671 hope-eureka"
+        sh "docker run -d  --name=hope-server-eureka -p 8081:4670 hope-eureka"
     }
 }
