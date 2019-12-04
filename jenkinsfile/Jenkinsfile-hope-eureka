@@ -20,6 +20,10 @@ node {
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 
+    stage('current user'){
+        echo "$USER"
+    }
+
     def dockerImage
     stage('build docker') {
         sh "cp -R hope-server-eureka/src/main/docker hope-server-eureka/target/"
@@ -29,6 +33,6 @@ node {
 
 
     stage('run docker') {
-        sh "sudo docker run -d  --name=hope-server-eureka -p 8081:4670 hope-eureka"
+        sh "docker run -d --name=hope-server-eureka -p 8080:4670 hope-eureka"
     }
 }
