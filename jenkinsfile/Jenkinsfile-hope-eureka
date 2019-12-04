@@ -29,6 +29,6 @@ node {
 
 
     stage('run docker') {
-        sh "docker run -d  --name=hope-server-eureka -p 8081:4670 hope-eureka"
+        sh "sudo docker run -d  --name=hope-server-eureka -p 8081:4670 hope-eureka"
     }
 }
