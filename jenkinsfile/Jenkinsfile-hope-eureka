@@ -16,7 +16,7 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hope-server-eureka -am package -Pprod -DskipTest"
+        sh "./mvnw -pl hope-server-eureka -am package"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 
