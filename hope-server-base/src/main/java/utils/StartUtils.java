@@ -1,9 +1,9 @@
 package utils;
 
+import org.slf4j.Logger;
 import org.springframework.core.env.Environment;
 
 import java.net.InetAddress;
-import java.util.logging.Logger;
 
 /**
  * @author wangning
