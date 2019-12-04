@@ -6,7 +6,6 @@ node {
     }
 
     stage('check java') {
-        #!/bin/bash -ilex
         sh "java -version"
     }
 
