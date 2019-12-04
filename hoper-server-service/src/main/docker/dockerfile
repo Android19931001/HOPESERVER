@@ -1,0 +1,7 @@
+FROM vertigomedia/ubuntu-jdk8
+ 
+ 
+ADD *.war /hope-service.war
+EXPOSE 4671
+CMD echo "The application will start in ..." && \
+    java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /hope-service.war

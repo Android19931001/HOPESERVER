@@ -1,0 +1,34 @@
+#!/usr/bin/env groovy
+
+node {
+    stage('checkout') {
+        checkout scm
+    }
+
+    stage('check java') {
+        sh "java -version"
+    }
+
+    stage('clean') {
+        sh "chmod +x mvnw"
+        sh "./mvnw clean"
+    }
+
+
+    stage('packaging') {
+        sh "./mvnw -pl hoper-server-service -am package -Pprod -DskipTest"
+        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+    }
+
+    def dockerImage
+    stage('build docker') {
+        sh "cp -R hoper-server-service/src/main/docker hoper-server-service/target/"
+        sh "cp hoper-server-service/target/*.jar hoper-server-service/target/docker/"
+        dockerImage = docker.build('hope-service', 'hoper-server-service/target/docker')
+    }
+
+
+    stage('run docker') {
+        sh "docker run -d  --name=hope-server-service -p 8081:4671 hope-service"
+    }
+}

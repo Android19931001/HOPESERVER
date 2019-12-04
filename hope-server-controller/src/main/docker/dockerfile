@@ -1,0 +1,7 @@
+FROM vertigomedia/ubuntu-jdk8
+ 
+ 
+ADD *.war /hope-controller.war
+EXPOSE 4672
+CMD echo "The application will start in ..." && \
+    java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /hope-controller.war
