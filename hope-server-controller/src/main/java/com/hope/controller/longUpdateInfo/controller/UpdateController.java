@@ -30,6 +30,12 @@ public class UpdateController {
     UpdateClient updateClient;
 
     @Timed(millis = Contants.TIME_PRIOD)
+    @GetMapping("/queryUpdateInfo/{userInfo}")
+    public BaseRes<UpdateInfo> showSomeInfo(@PathVariable String userInfo) {
+        return Result.ok(userInfo);
+    }
+
+    @Timed(millis = Contants.TIME_PRIOD)
     @GetMapping("/queryUpdateInfo/{id}")
     public BaseRes<UpdateInfo> queryUpdateInfoById(@PathVariable String id) {
         logger.info("查询app版本信息id===" + id);
