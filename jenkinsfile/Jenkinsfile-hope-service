@@ -9,6 +9,26 @@ node {
         sh "java -version"
     }
 
+    stage('remove exited docker') {
+        try {
+            sh "docker stop hoper-server-service"
+        } catch (e) {
+            echo '服务不存在' + e.toString()
+        }
+
+        try {
+            sh "docker rm hoper-server-service"
+        } catch (e) {
+            echo "容器不存在" + e.toString()
+        }
+
+        try {
+            sh "docker rmi hoper-service:latest"
+        } catch (e) {
+            echo "镜像不存在" + e.toString()
+        }
+    }
+
     stage('clean') {
         sh "chmod +x mvnw"
         sh "./mvnw clean"
@@ -16,19 +36,23 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hoper-server-service -am package -Pprod -DskipTest"
+        sh "./mvnw -pl hoper-server-service -am package"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+    }
+
+    stage('current user') {
+        echo "$USER"
     }
 
     def dockerImage
     stage('build docker') {
         sh "cp -R hoper-server-service/src/main/docker hoper-server-service/target/"
         sh "cp hoper-server-service/target/*.war hoper-server-service/target/docker/"
-        dockerImage = docker.build('hope-service', 'hoper-server-service/target/docker')
+        dockerImage = docker.build('hoper-service', 'hoper-server-service/target/docker')
     }
 
 
     stage('run docker') {
-        sh "docker run -d  --name=hope-server-service -p 8081:4671 hope-service"
+        sh "docker run -d --name=hoper-server-service -p 8081:4671 hoper-service"
     }
 }
