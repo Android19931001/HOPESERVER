@@ -29,9 +29,15 @@ public class UpdateController {
     @Autowired
     UpdateClient updateClient;
 
+    /**
+     * 测试接口
+     *
+     * @param userInfo
+     * @return
+     */
     @Timed(millis = Contants.TIME_PRIOD)
     @GetMapping("/showSomeInfo/{userInfo}")
-    public BaseRes<UpdateInfo> showSomeInfo(@PathVariable String userInfo) {
+    public BaseRes<String> showSomeInfo(@PathVariable String userInfo) {
         return Result.ok(userInfo);
     }
 
