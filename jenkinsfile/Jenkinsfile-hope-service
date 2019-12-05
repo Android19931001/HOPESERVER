@@ -11,19 +11,19 @@ node {
 
     stage('remove exited docker') {
         try {
-            sh "docker stop hoper-server-service"
+            sh "docker stop hope-server-service"
         } catch (e) {
             echo '服务不存在' + e.toString()
         }
 
         try {
-            sh "docker rm hoper-server-service"
+            sh "docker rm hope-server-service"
         } catch (e) {
             echo "容器不存在" + e.toString()
         }
 
         try {
-            sh "docker rmi hoper-service:latest"
+            sh "docker rmi hope-service:latest"
         } catch (e) {
             echo "镜像不存在" + e.toString()
         }
