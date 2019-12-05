@@ -48,11 +48,11 @@ node {
     stage('build docker') {
         sh "cp -R hoper-server-service/src/main/docker hoper-server-service/target/"
         sh "cp hoper-server-service/target/*.war hoper-server-service/target/docker/"
-        dockerImage = docker.build('hoper-service', 'hoper-server-service/target/docker')
+        dockerImage = docker.build('hope-service', 'hoper-server-service/target/docker')
     }
 
 
     stage('run docker') {
-        sh "docker run -d --name=hoper-server-service -p 8081:4671 hoper-service"
+        sh "docker run -d --name=hope-server-service -p 8081:4671 hope-service"
     }
 }
