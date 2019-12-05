@@ -36,7 +36,7 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hope-server-controller -am package"
+        sh "./mvnw -pl hope-server-controller -am clean package"
         archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
     }
 
