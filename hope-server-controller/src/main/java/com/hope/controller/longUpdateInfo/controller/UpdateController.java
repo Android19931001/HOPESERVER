@@ -30,7 +30,7 @@ public class UpdateController {
     UpdateClient updateClient;
 
     @Timed(millis = Contants.TIME_PRIOD)
-    @GetMapping("/queryUpdateInfo/{userInfo}")
+    @GetMapping("/showSomeInfo/{userInfo}")
     public BaseRes<UpdateInfo> showSomeInfo(@PathVariable String userInfo) {
         return Result.ok(userInfo);
     }
