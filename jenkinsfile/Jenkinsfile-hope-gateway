@@ -37,7 +37,7 @@ node {
 
     stage('packaging') {
         sh "./mvnw -pl hope-server-gateway -am clean package"
-        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+        archiveArtifacts artifacts: '**/target/hope-gateway.war', fingerprint: true
     }
 
     stage('current user') {

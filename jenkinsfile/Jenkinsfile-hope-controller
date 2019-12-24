@@ -36,8 +36,8 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hope-server-controller -am clean package"
-        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+        sh "./mvnw -pl hope-server-controller -am package"
+        archiveArtifacts artifacts: '**/target/hope-controller.war', fingerprint: true
     }
 
     stage('current user') {
@@ -50,6 +50,7 @@ node {
         sh "cp hope-server-controller/target/*.war hope-server-controller/target/docker/"
         dockerImage = docker.build('hope-controller', 'hope-server-controller/target/docker')
     }
+
 
 
     stage('run docker') {
