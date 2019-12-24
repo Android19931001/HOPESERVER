@@ -37,7 +37,7 @@ node {
 
     stage('packaging') {
         sh "./mvnw -pl hope-server-controller -am package"
-        archiveArtifacts artifacts: '**/target/hope-controller.war', fingerprint: true
+        archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 
     stage('current user') {
