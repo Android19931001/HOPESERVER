@@ -58,13 +58,16 @@ public class LongUpdateInfoResource {
         logger.debug("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
         QueryWrapper<LongUpdateInfoEntity> queryWrapper = new QueryWrapper<>();
         //模糊查询
-        if (StringUtils.isNotBlank(longUpdateInfoEntity.getAppName())) {
+        if (!StringUtils.isEmpty(longUpdateInfoEntity.getAppName())) {
             queryWrapper.like("app_name", longUpdateInfoEntity.getAppName());
+            longUpdateInfoEntity.setAppName(null);
         }
         //精准查询
-        if (StringUtils.isNotBlank(longUpdateInfoEntity.getAppName())) {
+        if (!StringUtils.isEmpty(longUpdateInfoEntity.getVerName())) {
             queryWrapper.eq("ver_name", longUpdateInfoEntity.getAppName());
+            longUpdateInfoEntity.setAppName(null);
         }
+        queryWrapper.setEntity(longUpdateInfoEntity);
         page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, queryWrapper);
         return ResponseEntity.ok().body(page);
     }
