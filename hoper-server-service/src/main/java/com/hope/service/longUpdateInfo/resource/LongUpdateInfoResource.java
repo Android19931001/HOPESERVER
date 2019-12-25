@@ -2,9 +2,12 @@ package com.hope.service.longUpdateInfo.resource;
 
 
 import base.BaseNoResp;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hope.service.longUpdateInfo.domain.LongUpdateInfoEntity;
 import com.hope.service.longUpdateInfo.service.impl.LongUpdateInfoServiceImpl;
 import contant.Contants;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,48 @@ public class LongUpdateInfoResource {
 
     @Autowired
     LongUpdateInfoServiceImpl longUpdateInfoService;
+
+    /**
+     * 分页查询
+     *
+     * @param longUpdateInfoEntity
+     * @param page
+     * @return
+     */
+    @Timed(millis = Contants.TIME_PRIOD)
+    @GetMapping("/longUpdateInfo/queryLongUpdateInfoList")
+    public ResponseEntity<Page<LongUpdateInfoEntity>> queryLongUpdateInfoList(LongUpdateInfoEntity longUpdateInfoEntity, Page<LongUpdateInfoEntity> page) {
+        logger.debug("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
+
+
+        page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, new QueryWrapper<>(longUpdateInfoEntity));
+        return ResponseEntity.ok().body(page);
+    }
+
+
+    /**
+     * 分页查询（模糊查询）
+     *
+     * @param longUpdateInfoEntity
+     * @param page
+     * @return
+     */
+    @Timed(millis = Contants.TIME_PRIOD)
+    @GetMapping("/longUpdateInfo/queryListByLike")
+    public ResponseEntity<Page<LongUpdateInfoEntity>> queryListByLike(LongUpdateInfoEntity longUpdateInfoEntity, Page<LongUpdateInfoEntity> page) {
+        logger.debug("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
+        QueryWrapper<LongUpdateInfoEntity> queryWrapper = new QueryWrapper<>();
+        //模糊查询
+        if (StringUtils.isNotBlank(longUpdateInfoEntity.getAppName())) {
+            queryWrapper.like("name", longUpdateInfoEntity.getAppName());
+        }
+        //精准查询
+        if (StringUtils.isNotBlank(longUpdateInfoEntity.getAppName())) {
+            queryWrapper.eq("name", longUpdateInfoEntity.getAppName());
+        }
+        page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, queryWrapper);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * 根据id查询（查）
