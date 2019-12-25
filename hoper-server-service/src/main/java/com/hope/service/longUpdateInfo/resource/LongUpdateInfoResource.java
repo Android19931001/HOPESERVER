@@ -40,9 +40,7 @@ public class LongUpdateInfoResource {
     @GetMapping("/longUpdateInfo/queryLongUpdateInfoList")
     public ResponseEntity<Page<LongUpdateInfoEntity>> queryLongUpdateInfoList(LongUpdateInfoEntity longUpdateInfoEntity, Page<LongUpdateInfoEntity> page) {
         logger.debug("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
-
-
-        page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, new QueryWrapper<>(longUpdateInfoEntity));
+        page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, new QueryWrapper<LongUpdateInfoEntity>(longUpdateInfoEntity));
         return ResponseEntity.ok().body(page);
     }
 
@@ -61,11 +59,11 @@ public class LongUpdateInfoResource {
         QueryWrapper<LongUpdateInfoEntity> queryWrapper = new QueryWrapper<>();
         //模糊查询
         if (StringUtils.isNotBlank(longUpdateInfoEntity.getAppName())) {
-            queryWrapper.like("name", longUpdateInfoEntity.getAppName());
+            queryWrapper.like("app_name", longUpdateInfoEntity.getAppName());
         }
         //精准查询
         if (StringUtils.isNotBlank(longUpdateInfoEntity.getAppName())) {
-            queryWrapper.eq("name", longUpdateInfoEntity.getAppName());
+            queryWrapper.eq("ver_name", longUpdateInfoEntity.getAppName());
         }
         page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, queryWrapper);
         return ResponseEntity.ok().body(page);
