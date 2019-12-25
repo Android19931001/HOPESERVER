@@ -40,7 +40,8 @@ public class LongUpdateInfoResource {
     @GetMapping("/longUpdateInfo/queryLongUpdateInfoList")
     public ResponseEntity<Page<LongUpdateInfoEntity>> queryLongUpdateInfoList(LongUpdateInfoEntity longUpdateInfoEntity, Page<LongUpdateInfoEntity> page) {
         logger.debug("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
-        page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, new QueryWrapper<LongUpdateInfoEntity>(longUpdateInfoEntity));
+        QueryWrapper<LongUpdateInfoEntity> wrapper = new QueryWrapper<>(longUpdateInfoEntity);
+        page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, wrapper);
         return ResponseEntity.ok().body(page);
     }
 
