@@ -40,7 +40,7 @@ public class LongUpdateInfoResource {
         @Timed(millis = Contants.TIME_PRIOD)
         @GetMapping("/longUpdateInfo/queryLongUpdateInfoList")
         public ResponseEntity<Page<LongUpdateInfoEntity>> queryLongUpdateInfoList(LongUpdateInfoEntity longUpdateInfoEntity, Page<LongUpdateInfoEntity> page) {
-            logger.info("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
+            logger.info("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\ncom.hope.server.entity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
             page = (Page<LongUpdateInfoEntity>) longUpdateInfoService.page(page, new QueryWrapper<>());
             return ResponseEntity.ok().body(page);
         }
@@ -56,7 +56,7 @@ public class LongUpdateInfoResource {
         @Timed(millis = Contants.TIME_PRIOD)
         @GetMapping("/longUpdateInfo/queryListByLike")
         public ResponseEntity<Page<LongUpdateInfoEntity>> queryListByLike(LongUpdateInfoEntity longUpdateInfoEntity, Page<LongUpdateInfoEntity> page) {
-            logger.info("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\nentity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
+            logger.info("LongUpdateInfoEntity query queryLongUpdateInfoList() [ /longUpdateInfo/queryList]\ncom.hope.server.entity = {} \npage = {current = {},size = {}}", longUpdateInfoEntity, page.getCurrent(), page.getSize());
             QueryWrapper<LongUpdateInfoEntity> queryWrapper = new QueryWrapper<>();
 //            模糊查询
             if (!StringUtils.isEmpty(longUpdateInfoEntity.getAppName())) {

@@ -1,6 +1,6 @@
-package com.server.service.utils;
+package com.hope.server.utils;
 
-import entity.GenEntity;
+import com.hope.server.entity.GenEntity;
 import freemarker.template.Template;
 
 import java.io.*;
@@ -54,8 +54,8 @@ public class FileGenerator {
         try {
             String chTableName = ChangeUtils.toJavaName(tableName);
             String entityFilePath = filePath + "domain";
-            System.out.println("the entity of java path is === " + entityFilePath);
-            Template template = FreeMarkUtils.getTemplate("entity.flt");
+            System.out.println("the com.hope.server.entity of java path is === " + entityFilePath);
+            Template template = FreeMarkUtils.getTemplate("com.hope.server.entity.flt");
             File parentFile = new File(entityFilePath);
             if (!parentFile.exists()) {
                 parentFile.mkdirs();

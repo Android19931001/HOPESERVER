@@ -1,4 +1,4 @@
-package com.server.service.utils;
+package com.hope.server.utils;
 
 /**
  * @author wangning

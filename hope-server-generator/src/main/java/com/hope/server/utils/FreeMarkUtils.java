@@ -1,4 +1,4 @@
-package com.server.service.utils;
+package com.hope.server.utils;
 
 import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.NullCacheStorage;

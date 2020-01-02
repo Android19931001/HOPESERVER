@@ -1,4 +1,4 @@
-package entity;
+package com.hope.server.entity;
 
 public class GenEntity {
 
