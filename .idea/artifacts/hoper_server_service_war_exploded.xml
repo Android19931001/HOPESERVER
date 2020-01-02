@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="hoper-server-service:war exploded">
-    <output-path>$PROJECT_DIR$/target/service-0.0.1-service</output-path>
+    <output-path>$PROJECT_DIR$/hope-server-service/target/service-0.0.1-service</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -132,7 +132,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/service-0.0.1-service/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/hope-server-service/target/service-0.0.1-service/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="hoper-server-service/web/Web" />
     </root>

@@ -11,16 +11,11 @@
         <module name="hope-server-eureka" />
         <module name="hope-server-gateway" />
         <module name="hope-server-generator" />
-      </profile>
-      <profile name="Annotation profile for hope-server-service" enabled="true">
-        <sourceOutputDir name="../hoper-server-service/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../hoper-server-service/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
         <module name="hope-server-service" />
       </profile>
       <profile name="Annotation profile for service" enabled="true">
-        <sourceOutputDir name="../target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <sourceOutputDir name="../hope-server-service/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../hope-server-service/target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hoper-server-service" />
       </profile>

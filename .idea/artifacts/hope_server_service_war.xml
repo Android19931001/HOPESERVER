@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="hope-server-service:war">
-    <output-path>$PROJECT_DIR$/hoper-server-service/target</output-path>
+    <output-path>$PROJECT_DIR$/hope-server-service/target</output-path>
     <root id="archive" name="service-0.0.1-service.war">
       <element id="artifact" artifact-name="hope-server-service:war exploded" />
     </root>
