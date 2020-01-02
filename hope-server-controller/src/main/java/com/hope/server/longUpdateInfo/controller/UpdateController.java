@@ -1,10 +1,10 @@
 package com.hope.server.longUpdateInfo.controller;
 
-import com.hope.server.base.BaseRes;
-import com.hope.server.base.ErrorResp;
+import com.server.service.base.BaseRes;
+import com.server.service.base.ErrorResp;
 import com.hope.server.longUpdateInfo.client.UpdateClient;
 import com.hope.server.longUpdateInfo.dto.UpdateInfo;
-import com.hope.server.contant.Contants;
+import com.server.service.contant.Contants;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.hope.server.utils.Result;
+import com.server.service.utils.Result;
 
 
 /**

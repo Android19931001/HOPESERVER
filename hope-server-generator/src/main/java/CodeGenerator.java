@@ -1,7 +1,7 @@
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.hope.server.utils.ChangeUtils;
-import com.hope.server.utils.FileGenerator;
+import com.server.service.utils.ChangeUtils;
+import com.server.service.utils.FileGenerator;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

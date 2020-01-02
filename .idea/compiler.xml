@@ -13,12 +13,6 @@
         <module name="hope-server-generator" />
         <module name="hope-server-service" />
       </profile>
-      <profile name="Annotation profile for service" enabled="true">
-        <sourceOutputDir name="../hope-server-service/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../hope-server-service/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="hoper-server-service" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="hope-server-base" target="1.8" />

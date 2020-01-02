@@ -1,6 +1,6 @@
 package ${packageName}.${tabChFileName}.service;
 
-import com.hope.server.base.BaseService;
+import com.server.service.base.BaseService;
 import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
 import org.springframework.stereotype.Service;
 

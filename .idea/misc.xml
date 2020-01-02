@@ -7,7 +7,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/hoper-server-service/pom.xml" />
         <option value="$PROJECT_DIR$/hope-server-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/hope-server-controller/pom.xml" />
         <option value="$PROJECT_DIR$/hope-server-gateway/pom.xml" />

@@ -1,6 +1,6 @@
 package ${packageName}.${tabChFileName}.mapper;
 
-import com.hope.server.base.BaseFrameMapper;
+import com.server.service.base.BaseFrameMapper;
 import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
 import org.apache.ibatis.annotations.Mapper;
 

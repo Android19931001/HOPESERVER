@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.server.service.longUpdateInfo.mapper.LongUpdateInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.server.service.longUpdateInfo.domain.LongUpdateInfoEntity">
+        <id column="id" property="id" />
+        <result column="app_name" property="appName"/>
+        <result column="ver_code" property="verCode"/>
+        <result column="ver_name" property="verName"/>
+        <result column="update_note" property="updateNote"/>
+        <result column="update_link" property="updateLink"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,app_name AS appName,ver_code AS verCode,ver_name AS verName,update_note AS updateNote,update_link AS updateLink
+    </sql>
+
+</mapper>

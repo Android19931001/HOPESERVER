@@ -1,6 +1,7 @@
-package com.hope.server.longUpdateInfo.dto;
+package com.server.service.longUpdateInfo.domain;
 
 import com.server.service.base.BaseEntity;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,8 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-public class UpdateInfo extends BaseEntity{
+@TableName("long_update_info")
+public class LongUpdateInfoEntity extends BaseEntity{
 
     /**
      * 主键id

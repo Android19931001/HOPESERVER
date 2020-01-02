@@ -1,6 +1,6 @@
 package ${packageName}.${tabChFileName}.service.impl;
 
-import com.hope.server.base.BaseServiceImpl;
+import com.server.service.base.BaseServiceImpl;
 import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
 import ${packageName}.${tabChFileName}.mapper.${tableChName}Mapper;
 import ${packageName}.${tabChFileName}.service.${tableChName}Service;

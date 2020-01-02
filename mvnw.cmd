@@ -82,7 +82,7 @@ goto error
 
 :init
 
-@REM Find the project com.hope.server.base dir, i.e. the directory that contains the folder ".mvn".
+@REM Find the project com.server.service.base dir, i.e. the directory that contains the folder ".mvn".
 @REM Fallback to current working directory if not found.
 
 set MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%
