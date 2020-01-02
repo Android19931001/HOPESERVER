@@ -1,8 +1,8 @@
 package ${packageName}.${tabChFileName}.resource;
 
 
-import contant.Contants;
-import base.BaseNoResp;
+import com.hope.server.contant.Contants;
+import com.hope.server.base.BaseNoResp;
 import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
 import ${packageName}.${tabChFileName}.service.impl.${tableChName}ServiceImpl;
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Timed;
 import org.springframework.web.bind.annotation.*;
-import utils.Result;
+import com.hope.server.utils.Result;
 
 
 /**

@@ -18,7 +18,7 @@
         <module>hope-server-controller</module>
         <module>hope-server-eureka</module>
         <module>hope-server-gateway</module>
-        <module>hoper-server-service</module>
+        <module>hope-server-service</module>
     </modules>
 
     <!-- 集中定义依赖版本号与基本配置 -->

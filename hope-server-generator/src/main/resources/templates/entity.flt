@@ -1,6 +1,6 @@
 package ${packageName}.${tabChFileName}.domain;
 
-import base.BaseEntity;
+import com.hope.server.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.Getter;

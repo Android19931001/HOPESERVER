@@ -5,7 +5,7 @@ spring:
     password: feilong@1993
     driver-class-name: com.mysql.jdbc.Driver
   application:
-    name: hope-controller-app
+    name: hope-server-app
   cloud:
     discovery:
       enabled: true
@@ -17,10 +17,10 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://hopeuser:hopepassword123@106.13.73.88:8080/eureka/
+      defaultZone: http://hopeuser:hopepassword123@106.13.73.88:8080/server/
     instance:
       prefer-ip-address: true
-      instance-id: hope-controller-client
+      instance-id: hope-server-client
     fetch-registry: true
     register-with-eureka: true
 
@@ -28,5 +28,5 @@ eureka:
 #在application.yml中加入全局调用的变量是使用instance开头，子类就可以根据要求自己定义了
 instance:
   Service:
-    ServiceName: hope-service-app
+    ServiceName: hope-server-app
     ServiceHost: http://106.13.73.88:8081

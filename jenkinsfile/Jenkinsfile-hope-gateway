@@ -11,19 +11,19 @@ node {
 
     stage('remove exited docker') {
         try {
-            sh "docker stop hope-server-gateway"
+            sh "docker stop hope-server-server"
         } catch (e) {
             echo '服务不存在' + e.toString()
         }
 
         try {
-            sh "docker rm hope-server-gateway"
+            sh "docker rm hope-server-server"
         } catch (e) {
             echo "容器不存在" + e.toString()
         }
 
         try {
-            sh "docker rmi hope-gateway:latest"
+            sh "docker rmi hope-server:latest"
         } catch (e) {
             echo "镜像不存在" + e.toString()
         }
@@ -36,7 +36,7 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hope-server-gateway -am clean package"
+        sh "./mvnw -pl hope-server-server -am clean package"
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 
@@ -46,13 +46,13 @@ node {
 
     def dockerImage
     stage('build docker') {
-        sh "cp -R hope-server-gateway/src/main/docker hope-server-gateway/target/"
-        sh "cp hope-server-gateway/target/*.war hope-server-gateway/target/docker/"
-        dockerImage = docker.build('hope-gateway', 'hope-server-gateway/target/docker')
+        sh "cp -R hope-server-server/src/main/docker hope-server-server/target/"
+        sh "cp hope-server-server/target/*.war hope-server-server/target/docker/"
+        dockerImage = docker.build('hope-server', 'hope-server-server/target/docker')
     }
 
 
     stage('run docker') {
-        sh "docker run -d --name=hope-server-gateway -p 8083:4673 hope-gateway"
+        sh "docker run -d --name=hope-server-server -p 8083:4673 hope-server"
     }
 }

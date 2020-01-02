@@ -41,12 +41,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.hope</groupId>
-            <artifactId>base</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -57,6 +51,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>5.1.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hope</groupId>
+            <artifactId>base</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

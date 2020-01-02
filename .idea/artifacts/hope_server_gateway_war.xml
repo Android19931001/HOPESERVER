@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hope-server-gateway:war">
+    <output-path>$PROJECT_DIR$/hope-server-gateway/target</output-path>
+    <root id="archive" name="gateway-0.0.1-gateway.war">
+      <element id="artifact" artifact-name="hope-server-gateway:war exploded" />
+    </root>
+  </artifact>
+</component>

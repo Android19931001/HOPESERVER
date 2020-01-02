@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/hope-server-eureka/hope-server-eureka.iml" filepath="$PROJECT_DIR$/hope-server-eureka/hope-server-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/hope-server-gateway/hope-server-gateway.iml" filepath="$PROJECT_DIR$/hope-server-gateway/hope-server-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/hope-server-generator/hope-server-generator.iml" filepath="$PROJECT_DIR$/hope-server-generator/hope-server-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hope-server-service/hope-server-service.iml" filepath="$PROJECT_DIR$/hope-server-service/hope-server-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/hoper-server-service/hoper-server-service.iml" filepath="$PROJECT_DIR$/hoper-server-service/hoper-server-service.iml" />
     </modules>
   </component>

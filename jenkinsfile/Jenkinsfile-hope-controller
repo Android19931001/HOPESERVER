@@ -11,19 +11,19 @@ node {
 
     stage('remove exited docker') {
         try {
-            sh "docker stop hope-server-controller"
+            sh "docker stop hope-server-server"
         } catch (e) {
             echo '服务不存在' + e.toString()
         }
 
         try {
-            sh "docker rm hope-server-controller"
+            sh "docker rm hope-server-server"
         } catch (e) {
             echo "容器不存在" + e.toString()
         }
 
         try {
-            sh "docker rmi hope-controller:latest"
+            sh "docker rmi hope-server:latest"
         } catch (e) {
             echo "镜像不存在" + e.toString()
         }
@@ -36,7 +36,7 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hope-server-controller -am package"
+        sh "./mvnw -pl hope-server-server -am package"
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 
@@ -46,14 +46,14 @@ node {
 
     def dockerImage
     stage('build docker') {
-        sh "cp -R hope-server-controller/src/main/docker hope-server-controller/target/"
-        sh "cp hope-server-controller/target/*.war hope-server-controller/target/docker/"
-        dockerImage = docker.build('hope-controller', 'hope-server-controller/target/docker')
+        sh "cp -R hope-server-server/src/main/docker hope-server-server/target/"
+        sh "cp hope-server-server/target/*.war hope-server-server/target/docker/"
+        dockerImage = docker.build('hope-server', 'hope-server-server/target/docker')
     }
 
 
 
     stage('run docker') {
-        sh "docker run -d --name=hope-server-controller -p 8082:4672 hope-controller"
+        sh "docker run -d --name=hope-server-server -p 8082:4672 hope-server"
     }
 }

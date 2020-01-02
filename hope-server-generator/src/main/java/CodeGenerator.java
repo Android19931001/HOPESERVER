@@ -1,7 +1,7 @@
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utils.ChangeUtils;
-import utils.FileGenerator;
+import com.hope.server.utils.ChangeUtils;
+import com.hope.server.utils.FileGenerator;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -43,7 +43,7 @@ public class CodeGenerator {
 //    om_cust_cash_base
 
     public static void main(String[] args) throws Exception {
-        System.out.println("请输入模块包名：例如（hope-frame-controller）");
+        System.out.println("请输入模块包名：例如（hope-frame-server）");
         Scanner scanner = new Scanner(System.in);
         String moduleName = scanner.next().trim();
         System.out.println("请输入表名称：例如（app_name_check）");

@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/hope-server-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/hope-server-controller/pom.xml" />
         <option value="$PROJECT_DIR$/hope-server-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/hope-server-service/pom.xml" />
       </list>
     </option>
   </component>
