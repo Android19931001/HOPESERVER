@@ -16,7 +16,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://hopeuser:hopepassword123@mireureka:8080/server/
+      defaultZone: http://hopeuser:hopepassword123@mireureka:4670/eureka/
     instance:
       prefer-ip-address: true
       instance-id: hope-service-client

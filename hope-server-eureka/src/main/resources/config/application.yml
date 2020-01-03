@@ -1,7 +1,7 @@
 spring:
   application:
-    name: micr-server-app
-    active: hope-mireureka-server
+    name: micr-eureka-app
+    active: hope-mireureka-service
   security:
     basic:
       enable: true
@@ -18,9 +18,9 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    #  添加defaultZone时候一定是service-url下的，否则会导致eureka默认的地址配置是http://localhost:8761/server
+    #  添加defaultZone时候一定是service-url下的，否则会导致eureka默认的地址配置是http://localhost:8761/eureka
     service-url:
-      defaultZone: http://hopeuser:hopepassword123@${eureka.instance.hostname}:${server.port}/server/
+      defaultZone: http://hopeuser:hopepassword123@${eureka.instance.hostname}:${server.port}/eureka/
   server:
     #  开启自我保护(默认开启)
     enable-self-preservation: true

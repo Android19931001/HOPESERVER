@@ -7,9 +7,9 @@ spring:
     gateway:
       routes:
       - id: hope-server
-        uri: http://106.13.73.88:8082/hope-server/
+        uri: http://106.13.73.88:8082/hope-controller/
         predicates:
-          - Path=/hope-server/**
+          - Path=/hope-gateway/**
         filters:
 #          不处理请求路径时转发的路由带有hope-gateway前缀，需要去掉该前缀
 #          例如： URI：http://localhost:4672/hope-controller/  PATH: /hope-server/**
@@ -24,7 +24,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://hopeuser:hopepassword123@106.13.73.88:8080//server/
+      defaultZone: http://hopeuser:hopepassword123@106.13.73.88:4670/eureka/
     instance:
       prefer-ip-address: true
       instance-id: hope-gateway-client
