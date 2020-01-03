@@ -5,7 +5,7 @@ spring:
     password: feilong@1993
     driver-class-name: com.mysql.jdbc.Driver
   application:
-    name: hope-server-app
+    name: hope-server-service
   cloud:
     discovery:
       enabled: true
@@ -19,10 +19,10 @@ eureka:
       defaultZone: http://hopeuser:hopepassword123@mireureka:4670/server/
     instance:
       prefer-ip-address: true
-      instance-id: hope-server-client
+      instance-id: hope-service-client
     fetch-registry: true
     register-with-eureka: true
 
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
-  typeAliasesPackage: com.hope.server.*.domain
+  typeAliasesPackage: com.server.service.*.domain
