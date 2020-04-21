@@ -38,7 +38,7 @@ public class UpdateController {
     @Timed(millis = Contants.TIME_PRIOD)
     @GetMapping("/showSomeInfo/{userInfo}")
     public BaseRes<String> showSomeInfo(@PathVariable String userInfo) {
-        return Result.ok("false");
+        return Result.ok("true");
     }
 
     @Timed(millis = Contants.TIME_PRIOD)
