@@ -38,7 +38,14 @@ public class UpdateController {
     @Timed(millis = Contants.TIME_PRIOD)
     @GetMapping("/showSomeInfo/{userInfo}")
     public BaseRes<String> showSomeInfo(@PathVariable String userInfo) {
-        return Result.ok("true");
+        if (StringUtils.isEmpty(userInfo)) {
+            return Result.ok("false");
+        }
+        if ("2.2.6".equals(userInfo)) {
+            return Result.ok("true");
+        } else {
+            return Result.ok("false");
+        }
     }
 
     @Timed(millis = Contants.TIME_PRIOD)
