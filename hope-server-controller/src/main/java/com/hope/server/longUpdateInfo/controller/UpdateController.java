@@ -41,7 +41,7 @@ public class UpdateController {
         if (StringUtils.isEmpty(userInfo)) {
             return Result.ok("false");
         }
-        if ("2.2.6".equals(userInfo)) {
+        if ("2.2.7".equals(userInfo)) {
             return Result.ok("true");
         } else {
             return Result.ok("false");
