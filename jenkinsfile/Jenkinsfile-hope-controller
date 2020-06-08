@@ -54,6 +54,9 @@ node {
 
 
     stage('run docker') {
-        sh "docker run -d --name=hope-server-controller -p 8082:4672 hope-controller"
+        sh "docker run -d --name=hope-server-controller " +
+                "-it -v /usr/local/hope-controller:/root/data " +
+                "-v /etc/localtime:/etc/localtime " +
+                "-p 8082:4672 hope-controller"
     }
 }

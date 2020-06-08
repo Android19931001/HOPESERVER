@@ -5,6 +5,7 @@ import com.server.service.base.ErrorResp;
 import com.hope.server.longUpdateInfo.client.UpdateClient;
 import com.hope.server.longUpdateInfo.dto.UpdateInfo;
 import com.server.service.contant.Contants;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,11 +21,11 @@ import com.server.service.utils.Result;
 /**
  * @author wangning
  */
+@Slf4j
 @RestController
 @RequestMapping("/webservice")
 public class UpdateController {
 
-    private Logger logger = LoggerFactory.getLogger(UpdateController.class);
 
     @Autowired
     UpdateClient updateClient;
@@ -48,10 +49,18 @@ public class UpdateController {
         }
     }
 
+    /**
+     * 获取版本信息
+     *
+     * @param * @param id
+     * @return com.server.service.base.BaseRes<com.hope.server.longUpdateInfo.dto.UpdateInfo>
+     * @author wangning
+     * @date 2020/6/8
+     */
     @Timed(millis = Contants.TIME_PRIOD)
     @GetMapping("/queryUpdateInfo/{id}")
     public BaseRes<UpdateInfo> queryUpdateInfoById(@PathVariable String id) {
-        logger.info("查询app版本信息id===" + id);
+        log.info("查询app版本信息id===" + id);
         if (StringUtils.isEmpty(id)) {
             return Result.error(new ErrorResp("查询id不能为空!"));
         }
