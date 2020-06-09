@@ -106,10 +106,19 @@
     </build>
     <profiles>
         <profile>
-            <id>prod</id>
+            <id>dev</id>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
         </profile>
         <profile>
-            <id>dev</id>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prd</spring.profiles.active>
+            </properties>
         </profile>
     </profiles>
 </project>
