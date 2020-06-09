@@ -23,7 +23,7 @@ eureka:
       defaultZone: http://hopeuser:hopepassword123@${eureka.instance.hostname}:${server.port}/eureka/
   server:
     #  开启自我保护(默认开启)
-    enable-self-preservation: true
+    enable-self-preservation: false
     eviction-interval-timer-in-ms: 4000
     renewal-percent-threshold: 0.49
 
