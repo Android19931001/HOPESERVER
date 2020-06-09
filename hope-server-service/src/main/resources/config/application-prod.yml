@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://hopeuser:hopepassword123@106.13.73.88:8080/eureka/
+    instance:
+      prefer-ip-address: true
+      instance-id: hope-service-client
+    fetch-registry: true
+    register-with-eureka: true
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  typeAliasesPackage: com.server.service.*.domain
+

@@ -36,7 +36,7 @@ public class ${tableChName}Entity extends BaseEntity{
     private int ${model.getColumnChName()};
     </#if>
     <#if (model.getTypeCode()='DECIMAL')>
-    private double ${model.getColumnChName()};
+    private BigDecimal ${model.getColumnChName()};
     </#if>
     <#if (model.getTypeCode()='INT UNSIGNED')>
     private int ${model.getColumnChName()};

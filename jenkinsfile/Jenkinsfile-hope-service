@@ -36,7 +36,7 @@ node {
 
 
     stage('packaging') {
-        sh "./mvnw -pl hope-server-service -am clean package"
+        sh "./mvnw -pl hope-server-service -am -pProd clean package"
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 

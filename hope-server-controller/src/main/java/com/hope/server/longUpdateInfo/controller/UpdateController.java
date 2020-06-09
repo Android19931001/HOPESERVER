@@ -30,6 +30,7 @@ public class UpdateController {
     @Autowired
     UpdateClient updateClient;
 
+
     /**
      * 测试接口
      *
