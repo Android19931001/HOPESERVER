@@ -10,7 +10,6 @@ spring:
     discovery:
       enabled: true
 
-
 server:
   port: 4671
 

@@ -9,8 +9,4 @@ eureka:
     register-with-eureka: true
 
 
-mybatis-plus:
-  mapper-locations: classpath:mapper/**/*.xml
-  typeAliasesPackage: com.server.service.*.domain
-
 
