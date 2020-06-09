@@ -9,8 +9,7 @@ spring:
   cloud:
     discovery:
       enabled: true
-  profiles:
-    active: dev
+
 
 server:
   port: 4671
