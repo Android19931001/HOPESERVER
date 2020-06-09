@@ -108,7 +108,7 @@
         <profile>
             <id>dev</id>
             <properties>
-                <spring.profiles.active>dev</spring.profiles.active>
+                <start-profile>dev</start-profile>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -117,7 +117,7 @@
         <profile>
             <id>prod</id>
             <properties>
-                <spring.profiles.active>prod</spring.profiles.active>
+                <start-profile>prod</start-profile>
             </properties>
         </profile>
     </profiles>

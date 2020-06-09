@@ -89,4 +89,21 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <start-profile>dev</start-profile>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <start-profile>prod</start-profile>
+            </properties>
+        </profile>
+    </profiles>
 </project>

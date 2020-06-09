@@ -10,23 +10,7 @@ spring:
     discovery:
       enabled: true
   profiles:
-    active: true
+    active: @start-profile@
 
 server:
   port: 4672
-eureka:
-  client:
-    service-url:
-      defaultZone: http://hopeuser:hopepassword123@106.13.73.88:8080/eureka/
-    instance:
-      prefer-ip-address: true
-      instance-id: hope-controller-client
-    fetch-registry: true
-    register-with-eureka: true
-
-
-#在application.yml中加入全局调用的变量是使用instance开头，子类就可以根据要求自己定义了
-instance:
-  Service:
-    ServiceName: hope-server-service
-    ServiceHost: http://106.13.73.88:8081

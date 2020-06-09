@@ -10,7 +10,7 @@ spring:
     discovery:
       enabled: true
   profiles:
-    active: @spring.profiles.active@
+    active: @start-profile@
 server:
   port: 4671
 
