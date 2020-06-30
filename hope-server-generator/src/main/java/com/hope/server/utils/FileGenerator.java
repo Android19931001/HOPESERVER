@@ -55,12 +55,12 @@ public class FileGenerator {
             String chTableName = ChangeUtils.toJavaName(tableName);
             String entityFilePath = filePath + "domain";
             System.out.println("the com.hope.server.entity of java path is === " + entityFilePath);
-            Template template = FreeMarkUtils.getTemplate("com.hope.server.entity.flt");
+            Template template = FreeMarkUtils.getTemplate("entity.flt");
             File parentFile = new File(entityFilePath);
             if (!parentFile.exists()) {
                 parentFile.mkdirs();
             }
-            createFile(template, new File(entityFilePath + "/" + chTableName + "Entity.java"));
+            createFile(template, new File(entityFilePath + "/" + chTableName + ".java"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,17 +1,16 @@
 package ${packageName}.${tabChFileName}.resource;
 
 
-import com.server.service.contant.Contants;
 import com.server.service.base.BaseNoResp;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
-import ${packageName}.${tabChFileName}.service.impl.${tableChName}ServiceImpl;
+import ${packageName}.${tabChFileName}.domain.${tableChName};
+import ${packageName}.${tabChFileName}.service.${tableChName}Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.annotation.Timed;
+import com.codahale.metrics.annotation.Timed;
 import org.springframework.web.bind.annotation.*;
 import com.server.service.utils.Result;
 
@@ -26,21 +25,21 @@ public class ${tableChName}Resource {
     private Logger logger = LoggerFactory.getLogger(${tableChName}Resource.class);
 
     @Autowired
-    ${tableChName}ServiceImpl ${tabChFileName}Service;
+    ${tableChName}Service ${tabChFileName}Service;
 
 
     /**
          * 分页查询
          *
-         * @param ${tabChFileName}Entity
+         * @param ${tabChFileName}
          * @param page
          * @return
          */
-        @Timed(millis = Contants.TIME_PRIOD)
+        @Timed
         @GetMapping("/${tabChFileName}/query${tableChName}List")
-        public ResponseEntity<Page<${tableChName}Entity>> query${tableChName}List(${tableChName}Entity ${tabChFileName}Entity, Page<${tableChName}Entity> page) {
-            logger.info("${tableChName}Entity query query${tableChName}List() [ /${tabChFileName}/queryList]\nentity = {} \npage = {current = {},size = {}}", ${tabChFileName}Entity, page.getCurrent(), page.getSize());
-            page = (Page<${tableChName}Entity>) ${tabChFileName}Service.page(page, new QueryWrapper<>());
+        public ResponseEntity<Page<${tableChName}>> query${tableChName}List(${tableChName} ${tabChFileName}, Page<${tableChName}> page) {
+            logger.info("${tableChName} query query${tableChName}List() [ /${tabChFileName}/queryList]\n = {} \npage = {current = {},size = {}}", ${tabChFileName}, page.getCurrent(), page.getSize());
+            page = ${tabChFileName}Service.page(page, new QueryWrapper<>());
             return ResponseEntity.ok().body(page);
         }
 
@@ -48,26 +47,26 @@ public class ${tableChName}Resource {
         /**
          * 分页查询（模糊查询）
          *
-         * @param ${tabChFileName}Entity
+         * @param ${tabChFileName}
          * @param page
          * @return
          */
-        @Timed(millis = Contants.TIME_PRIOD)
+        @Timed
         @GetMapping("/${tabChFileName}/queryListByLike")
-        public ResponseEntity<Page<${tableChName}Entity>> queryListByLike(${tableChName}Entity ${tabChFileName}Entity, Page<${tableChName}Entity> page) {
-            logger.info("${tableChName}Entity query query${tableChName}List() [ /${tabChFileName}/queryList]\nentity = {} \npage = {current = {},size = {}}", ${tabChFileName}Entity, page.getCurrent(), page.getSize());
-            QueryWrapper<${tableChName}Entity> queryWrapper = new QueryWrapper<>();
+        public ResponseEntity<Page<${tableChName}>> queryListByLike(${tableChName} ${tabChFileName}, Page<${tableChName}> page) {
+            logger.info("${tableChName} query query${tableChName}List() [ /${tabChFileName}/queryList]\n = {} \npage = {current = {},size = {}}", ${tabChFileName}, page.getCurrent(), page.getSize());
+            QueryWrapper<${tableChName}> queryWrapper = new QueryWrapper<>();
             //模糊查询
-            //if (!StringUtils.isEmpty(${tabChFileName}Entity.getAppName())) {
-            //    queryWrapper.like("查询字段", ${tabChFileName}Entity.getAppName());
-            //    longUpdateInfoEntity.setAppName(null);
+            //if (!StringUtils.isEmpty(${tabChFileName}.getAppName())) {
+            //    queryWrapper.like("查询字段", ${tabChFileName}.getAppName());
+            //    longUpdateInfo.setAppName(null);
             //}
             //精准查询
-            //if (StringUtils.isNotBlank(${tabChFileName}Entity.getAppName())) {
-            //    queryWrapper.eq("查询字段", ${tabChFileName}Entity.getAppName());
-            //    longUpdateInfoEntity.setVerName(null);
+            //if (StringUtils.isNotBlank(${tabChFileName}.getAppName())) {
+            //    queryWrapper.eq("查询字段", ${tabChFileName}.getAppName());
+            //    longUpdateInfo.setVerName(null);
             //}
-            page = (Page<${tableChName}Entity>) ${tabChFileName}Service.page(page,queryWrapper);
+            page = ${tabChFileName}Service.page(page,queryWrapper);
 
             return ResponseEntity.ok().body(page);
         }
@@ -78,12 +77,12 @@ public class ${tableChName}Resource {
      * @param id
      * @return
      */
-    @Timed(millis = Contants.TIME_PRIOD)
+    @Timed
     @GetMapping("/${tabChFileName}/select/{id}")
-    public ResponseEntity<${tableChName}Entity> select${tableChName}ById(@PathVariable String id) {
+    public ResponseEntity<${tableChName}> select${tableChName}ById(@PathVariable String id) {
         logger.info("查询的Id === {}", id);
-        ${tableChName}Entity ${tabChFileName}Entity = ${tabChFileName}Service.getById(id);
-        return ResponseEntity.ok().body(${tabChFileName}Entity);
+        ${tableChName} ${tabChFileName} = ${tabChFileName}Service.getById(id);
+        return ResponseEntity.ok().body(${tabChFileName});
     }
 
     /**
@@ -92,7 +91,7 @@ public class ${tableChName}Resource {
      * @param id
      * @return
      */
-    @Timed(millis = Contants.TIME_PRIOD)
+    @Timed
     @DeleteMapping("/${tabChFileName}/remove/{id}")
     public BaseNoResp<Boolean> remove${tableChName}ById(@PathVariable String id) {
         logger.info("删除操作id === {}", id);
@@ -102,15 +101,15 @@ public class ${tableChName}Resource {
     /**
      * 插入数据（增）（改）
      *
-     * @param ${tabChFileName}Entity
+     * @param ${tabChFileName}
      * @return
      */
-    @Timed(millis = Contants.TIME_PRIOD)
+    @Timed
     @PostMapping("/${tabChFileName}/saveOrUpdate")
-    public ResponseEntity<${tableChName}Entity> save${tableChName}(@RequestBody ${tableChName}Entity ${tabChFileName}Entity) {
-        logger.info("添加操作 === {}", ${tabChFileName}Entity);
-        ${tabChFileName}Service.saveOrUpdate(${tabChFileName}Entity);
-        return ResponseEntity.ok().body(${tabChFileName}Entity);
+    public ResponseEntity<${tableChName}> save${tableChName}(@RequestBody ${tableChName} ${tabChFileName}) {
+        logger.info("添加操作 === {}", ${tabChFileName});
+        ${tabChFileName}Service.saveOrUpdate(${tabChFileName});
+        return ResponseEntity.ok().body(${tabChFileName});
     }
 
 

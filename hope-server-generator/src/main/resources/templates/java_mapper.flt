@@ -1,13 +1,13 @@
 package ${packageName}.${tabChFileName}.mapper;
 
 import com.server.service.base.BaseFrameMapper;
-import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
+import ${packageName}.${tabChFileName}.domain.${tableChName};
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author ${author}
  */
 @Mapper
-public interface ${tableChName}Mapper extends BaseFrameMapper<${tableChName}Entity> {
+public interface ${tableChName}Mapper extends BaseFrameMapper<${tableChName}> {
 
 }

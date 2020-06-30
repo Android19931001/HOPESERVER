@@ -20,6 +20,7 @@
       <module name="hope-server-eureka" target="1.8" />
       <module name="hope-server-gateway" target="1.8" />
       <module name="hope-server-generator" target="1.8" />
+      <module name="hope-server-jun" target="1.8" />
       <module name="hope-server-service" target="1.8" />
       <module name="hoper-server-service" target="1.8" />
       <module name="HOPESERVER" target="1.8" />

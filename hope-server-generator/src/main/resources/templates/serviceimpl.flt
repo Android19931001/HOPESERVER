@@ -1,7 +1,7 @@
 package ${packageName}.${tabChFileName}.service.impl;
 
 import com.server.service.base.BaseServiceImpl;
-import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
+import ${packageName}.${tabChFileName}.domain.${tableChName};
 import ${packageName}.${tabChFileName}.mapper.${tableChName}Mapper;
 import ${packageName}.${tabChFileName}.service.${tableChName}Service;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @author ${author}
  */
 @Service
-public class ${tableChName}ServiceImpl extends BaseServiceImpl<${tableChName}Mapper, ${tableChName}Entity> implements ${tableChName}Service {
+public class ${tableChName}ServiceImpl extends BaseServiceImpl<${tableChName}Mapper, ${tableChName}> implements ${tableChName}Service {
 
     private ${tableChName}Mapper ${tabChFileName}Mapper;
 

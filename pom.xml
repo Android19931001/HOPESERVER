@@ -34,12 +34,12 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-core</artifactId>
-            <version>3.1.0</version>
+            <version>3.3.1</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-extension</artifactId>
-            <version>3.1.0</version>
+            <version>3.3.1</version>
         </dependency>
         <!-- 用来实现mapper,Iservice,ServiceImpl的依赖-->
 
@@ -78,6 +78,12 @@
             <version>1.18.4</version>
         </dependency>
         <!-- 处理实体累的工具，可以实现set，get方法-->
+
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-annotation</artifactId>
+            <version>4.0.5</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -101,8 +101,8 @@
           <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.4.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.8.RELEASE" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.1.0" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:3.1.0" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.3.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus:3.3.1" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:3.2.0" />
@@ -115,12 +115,12 @@
           <element id="archive" name="base-1.0-SNAPSHOT.jar">
             <element id="module-output" name="hope-server-base" />
           </element>
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.1.0" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.1.0" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.0" />
-          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:1.4" />
-          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-extension:3.1.0" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.0" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.3.1" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.3.1" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:3.1" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.3" />
+          <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-extension:3.3.1" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.3" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.8.RELEASE" />
@@ -129,6 +129,7 @@
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.0-rc1" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.15" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.4" />
+          <element id="library" level="project" name="Maven: io.dropwizard.metrics:metrics-annotation:4.0.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">

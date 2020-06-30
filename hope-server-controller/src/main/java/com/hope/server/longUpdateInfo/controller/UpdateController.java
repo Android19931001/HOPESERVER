@@ -40,6 +40,7 @@ public class UpdateController {
     @Timed(millis = Contants.TIME_PRIOD)
     @GetMapping("/showSomeInfo/{userInfo}")
     public BaseRes<String> showSomeInfo(@PathVariable String userInfo) {
+        log.info("获取上线版本号为：" + userInfo);
         if (StringUtils.isEmpty(userInfo)) {
             return Result.ok("false");
         }

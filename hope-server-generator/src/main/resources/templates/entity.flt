@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @TableName("${tableName}")
-public class ${tableChName}Entity extends BaseEntity{
+public class ${tableChName} extends BaseEntity{
 
    <#list columns as model>
    <#if (model.getColumnChName()!='createdBy'

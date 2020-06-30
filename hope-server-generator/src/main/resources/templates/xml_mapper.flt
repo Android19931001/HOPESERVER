@@ -3,7 +3,7 @@
 <mapper namespace="${packageName}.${tabChFileName}.mapper.${tableChName}Mapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="${packageName}.${tabChFileName}.domain.${tableChName}Entity">
+    <resultMap id="BaseResultMap" type="${packageName}.${tabChFileName}.domain.${tableChName}">
         <id column="id" property="id" />
     <#list columns as column>
     <#if (column.getColumName()!='id')>

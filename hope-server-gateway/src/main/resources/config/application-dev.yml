@@ -12,11 +12,7 @@ spring:
 #          当StripPrefix=1时，转发后的路径为：http://localhost:4672/hope-gateway/
 #          当StripPrefix=2时，转发后的路径为：http://localhost:4672/
           - StripPrefix=1
-  profiles:
-    active: true
 
-server:
-  port: 4673
 
 eureka:
   client:

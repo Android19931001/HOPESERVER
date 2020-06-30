@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @TableName("long_update_info")
-public class LongUpdateInfoEntity extends BaseEntity{
+public class LongUpdateInfoEntity extends BaseEntity<LongUpdateInfoEntity>{
 
     /**
      * 主键id

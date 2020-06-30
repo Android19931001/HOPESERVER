@@ -1,13 +1,13 @@
 package ${packageName}.${tabChFileName}.service;
 
 import com.server.service.base.BaseService;
-import ${packageName}.${tabChFileName}.domain.${tableChName}Entity;
+import ${packageName}.${tabChFileName}.domain.${tableChName};
 import org.springframework.stereotype.Service;
 
 /**
  * @author ${author}
  */
 @Service
-public interface ${tableChName}Service extends BaseService<${tableChName}Entity> {
+public interface ${tableChName}Service extends BaseService<${tableChName}> {
 
 }

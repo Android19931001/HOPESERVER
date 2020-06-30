@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 /**
  * @author wangning
  */
-@Service
 public interface LongUpdateInfoService extends BaseService<LongUpdateInfoEntity> {
 
 }
