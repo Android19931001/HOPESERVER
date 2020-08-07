@@ -1,5 +1,6 @@
 package com.hope.server.longUpdateInfo.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.server.service.base.BaseRes;
 import com.server.service.base.ErrorResp;
 import com.hope.server.longUpdateInfo.client.UpdateClient;
@@ -44,7 +45,7 @@ public class UpdateController {
         if (StringUtils.isEmpty(userInfo)) {
             return Result.ok("false");
         }
-        if ("2.2.8".equals(userInfo)) {
+        if ("2.2.9".equals(userInfo)) {
             return Result.ok("true");
         } else {
             return Result.ok("false");
@@ -70,6 +71,7 @@ public class UpdateController {
         if (null == updateInfo) {
             return Result.error(new ErrorResp("查询app版本更新信息失败"));
         }
+
         return Result.ok(updateInfo);
     }
 }
