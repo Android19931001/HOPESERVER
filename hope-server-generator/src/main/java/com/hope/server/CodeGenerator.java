@@ -33,7 +33,7 @@ public class CodeGenerator {
     /**
      * 数据库链接驱动
      */
-    private  static final String dbDriver = "com.mysql.cj.jdbc.Driver";
+    private static final String dbDriver = "com.mysql.cj.jdbc.Driver";
 
     /**
      * java文件生成路径
@@ -45,6 +45,30 @@ public class CodeGenerator {
 //    om_cust_cash_base
 
     public static void main(String[] args) throws Exception {
+
+//        System.out.println("请输入购买的啤酒个数：");
+//        Scanner scanner = new Scanner(System.in);
+//        int beerAccount = scanner.nextInt();
+//        int totalDrinkBeer = beerAccount;
+//        //瓶盖起始数量
+//        int caps = beerAccount;
+//        int glsses = beerAccount;
+//        while (true) {
+//            int beerCap = caps / 4;
+//            int beerGlass = beerAccount / 2;
+//            //兑换之后的瓶盖数量
+//            caps = caps % 4 + beerGlass + beerCap;
+//            glsses = glsses - beerGlass + beerCap;
+//            if (beerCap == 0 && beerGlass == 0) {
+//                break;
+//            }
+//            //当前可以换的数量
+//            totalDrinkBeer = totalDrinkBeer + beerCap + beerGlass;
+//            beerAccount = beerAccount - beerGlass + beerCap;
+//        }
+//        System.out.println("总共可以喝的啤酒个数为：" + totalDrinkBeer + "\n剩余的瓶盖数量：" + caps + "\n剩余的空瓶：" + glsses);
+
+
         System.out.println("请输入模块包名：例如（hope-frame-server）");
         Scanner scanner = new Scanner(System.in);
         String moduleName = scanner.next().trim();
@@ -59,7 +83,7 @@ public class CodeGenerator {
             DatabaseMetaData metaData = connection.getMetaData();
             ResultSet resultSet = metaData.getColumns(null, "%", tableName, "%");
             FileGenerator.instance(packageName, tableName, filePath).generatorFile(resultSet);
-            logger.error("=================={}==================","All files were created successfully");
+            logger.error("=================={}==================", "All files were created successfully");
         }
     }
 
