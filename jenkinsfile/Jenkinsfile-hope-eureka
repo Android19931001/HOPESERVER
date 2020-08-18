@@ -6,7 +6,9 @@ node {
     }
 
     stage('check java') {
-        sh "java -version"
+//        sh "java -version"
+        echo $JAVA_HOME
+        echo $PATH
     }
 
     stage('remove exited docker') {
