@@ -5,11 +5,10 @@ node {
         checkout scm
     }
 
-    stage('check java') {
+//    stage('check java') {
 //        sh "java -version"
-        echo $JAVA_HOME
-        echo $PATH
-    }
+
+//    }
 
     stage('remove exited docker') {
         try {
