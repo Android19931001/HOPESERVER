@@ -15,6 +15,10 @@ eureka:
     appname: ${spring.application.name}
     hostname: mireureka
     prefer-ip-address: false
+    #每60秒告诉服务端自己还活着
+    lease-renewal-interval-in-seconds: 60
+    #告诉服务端，如果我2s之内没有给你发心跳，就代表我“死”了，将我踢出掉。
+    lease-expiration-duration-in-seconds: 60
   client:
     register-with-eureka: false
     fetch-registry: false
