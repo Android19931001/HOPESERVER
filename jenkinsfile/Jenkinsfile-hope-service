@@ -53,6 +53,6 @@ node {
 
 
     stage('run docker') {
-        sh "docker run -d --name=hope-server-service -p 8081:4671 hope-service"
+        sh "docker run -d --name=hope-server-service -p 1041:4671 hope-service"
     }
 }

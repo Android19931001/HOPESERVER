@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://106.13.73.88:3306/littleflydragon?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false
+    url: jdbc:mysql://121.36.66.235:3306/chatcloud?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false
     username: root
     password: feilong@1993
     driver-class-name: com.mysql.jdbc.Driver

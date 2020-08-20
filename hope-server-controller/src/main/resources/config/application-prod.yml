@@ -13,4 +13,4 @@ eureka:
 instance:
   Service:
     ServiceName: hope-server-service
-    ServiceHost: http://106.13.73.88:8081
+    ServiceHost: http://121.36.66.235:1042
