@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hope.server.api.longUserInfo.mapper.LongUserInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hope.server.api.longUserInfo.domain.LongUserInfo">
+        <id column="id" property="id" />
+        <result column="user_name" property="userName"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="phone_type" property="phoneType"/>
+        <result column="phone_version" property="phoneVersion"/>
+        <result column="user_pwd" property="userPwd"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="created_by" property="createdBy"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,user_name AS userName,phone_number AS phoneNumber,phone_type AS phoneType,phone_version AS phoneVersion,user_pwd AS userPwd,created_date AS createdDate,created_by AS createdBy
+    </sql>
+
+</mapper>

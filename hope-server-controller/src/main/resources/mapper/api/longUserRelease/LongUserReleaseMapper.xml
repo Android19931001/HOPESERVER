@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hope.server.api.longUserRelease.mapper.LongUserReleaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hope.server.api.longUserRelease.domain.LongUserRelease">
+        <id column="id" property="id" />
+        <result column="re_user_id" property="reUserId"/>
+        <result column="re_text" property="reText"/>
+        <result column="re_img_url" property="reImgUrl"/>
+        <result column="re_video_url" property="reVideoUrl"/>
+        <result column="re_date" property="reDate"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,re_user_id AS reUserId,re_text AS reText,re_img_url AS reImgUrl,re_video_url AS reVideoUrl,re_date AS reDate
+    </sql>
+
+</mapper>
