@@ -53,7 +53,7 @@ public class FileGenerator {
     private void toEntityFile() {
         try {
             String chTableName = ChangeUtils.toJavaName(tableName);
-            String entityFilePath = filePath + "domain";
+            String entityFilePath = filePath + "dto";
             System.out.println("the com.hope.server.entity of java path is === " + entityFilePath);
             Template template = FreeMarkUtils.getTemplate("entity.flt");
             File parentFile = new File(entityFilePath);
@@ -129,7 +129,7 @@ public class FileGenerator {
     private void toXmlMapper() {
         try {
             String chTableName = ChangeUtils.toJavaName(tableName);
-            String xmlMapperPath = filePath.substring(0, filePath.indexOf("java")) + "resources/mapper/" + ChangeUtils.toFileDirName(tableName);
+            String xmlMapperPath = filePath.substring(0, filePath.indexOf("java")) + "resources/mapper/api/" + ChangeUtils.toFileDirName(tableName);
             System.out.println("the mapper of xml path is === " + xmlMapperPath);
             Template template = FreeMarkUtils.getTemplate("xml_mapper.flt");
             File parentFile = new File(xmlMapperPath);
@@ -148,7 +148,7 @@ public class FileGenerator {
     private void toControllerFile() {
         try {
             String chTableName = ChangeUtils.toJavaName(tableName);
-            String controllerPath = filePath + "resource";
+            String controllerPath = filePath + "web.webservice";
             System.out.println("the server of java path is === " + controllerPath);
             Template template = FreeMarkUtils.getTemplate("server.flt");
             File parentFile = new File(controllerPath);

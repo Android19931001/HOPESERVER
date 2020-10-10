@@ -1,4 +1,4 @@
-package ${packageName}.${tabChFileName}.resource;
+package ${packageName}.${tabChFileName}.web.webservice;
 
 
 import com.server.service.base.BaseNoResp;
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import com.codahale.metrics.annotation.Timed;
 import org.springframework.web.bind.annotation.*;
-import com.server.service.utils.Result;
+import com.server.service.utils.Res;
 
 
 /**
@@ -95,7 +95,7 @@ public class ${tableChName}Resource {
     @DeleteMapping("/${tabChFileName}/remove/{id}")
     public BaseNoResp<Boolean> remove${tableChName}ById(@PathVariable String id) {
         logger.info("删除操作id === {}", id);
-        return Result.noBody(${tabChFileName}Service.removeById(id));
+        return Res.noBody(${tabChFileName}Service.removeById(id));
     }
 
     /**

@@ -3,12 +3,13 @@ package com.server.service.utils;
 import com.server.service.base.BaseNoResp;
 import com.server.service.base.BaseRes;
 import com.server.service.base.ErrorResp;
+import com.server.service.base.Result;
 import com.server.service.contant.Contants;
 
 /**
  * @author wangning
  */
-public class Result {
+public class Res {
 
     /**
      * 添加返回体
@@ -18,22 +19,19 @@ public class Result {
      * @param object
      * @return
      */
-    private static BaseRes instance(int code, String message, Object object) {
+    private static Result instance(int code, String message, Object object) {
         return new BaseRes(code, message).setData(object);
     }
 
     /**
      * 发生异常时返回的实体
      *
-     * @param code
      * @param message
-     * @param errorResp
      * @return
      */
-    private static BaseRes error(int code, String message, ErrorResp errorResp) {
-        return new BaseRes(code, message).setData(errorResp);
+    public static Result error(String message) {
+        return new Result(Contants.ERROR, message);
     }
-
 
     /**
      * 请求成功之后的包装类
@@ -41,19 +39,13 @@ public class Result {
      * @param object
      * @return
      */
-    public static BaseRes ok(Object object) {
+    public static Result ok(Object object) {
+        if (object instanceof String) {
+            return new Result(Contants.SUCCESS, object.toString());
+        }
         return instance(Contants.SUCCESS, Contants.SUCCESS_MSG, object);
     }
 
-
-    /**
-     * 请求失败之后的包装类
-     * @param errorResp
-     * @return
-     */
-    public static BaseRes error(ErrorResp errorResp) {
-        return error(Contants.ERROR, Contants.ERROR_MSG, errorResp);
-    }
 
     /**
      * 用来返回一些没有出参体的返回数据用

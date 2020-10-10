@@ -7,15 +7,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.server.service.longUpdateInfo.domain.LongUpdateInfoEntity;
 import com.server.service.longUpdateInfo.service.LongUpdateInfoService;
+import com.server.service.utils.Res;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.Timed;
 import org.springframework.web.bind.annotation.*;
-import com.server.service.utils.Result;
 
 
 /**
@@ -98,7 +97,7 @@ public class LongUpdateInfoResource {
     @DeleteMapping("/longUpdateInfo/remove/{id}")
     public BaseNoResp<Boolean> removeLongUpdateInfoById(@PathVariable String id) {
         logger.info("删除操作id === {}", id);
-        return Result.noBody(longUpdateInfoService.removeById(id));
+        return Res.noBody(longUpdateInfoService.removeById(id));
     }
 
     /**

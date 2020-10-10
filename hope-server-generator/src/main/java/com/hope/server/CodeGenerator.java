@@ -18,7 +18,7 @@ public class CodeGenerator {
     /**
      * 数据库连接地址
      */
-    private static final String DATA_BASE_URL = "jdbc:mysql://106.13.73.88:3306/littleflydragon?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false";
+    private static final String DATA_BASE_URL = "jdbc:mysql://121.36.66.235:3306/chatcloud?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false";
 
     /**
      * 数据登录用户名

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import com.codahale.metrics.annotation.Timed;
 import org.springframework.web.bind.annotation.*;
-import com.server.service.utils.Result;
+import com.server.service.utils.Res;
 
 
 /**
@@ -95,7 +95,7 @@ public class LongUserInfoResource {
     @DeleteMapping("/longUserInfo/remove/{id}")
     public BaseNoResp<Boolean> removeLongUserInfoById(@PathVariable String id) {
         logger.info("删除操作id === {}", id);
-        return Result.noBody(longUserInfoService.removeById(id));
+        return Res.noBody(longUserInfoService.removeById(id));
     }
 
     /**

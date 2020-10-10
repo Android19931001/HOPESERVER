@@ -17,4 +17,4 @@ server:
 
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
-  typeAliasesPackage: com.server.service.*.domain
+  typeAliasesPackage: com.server.service.*.dto
