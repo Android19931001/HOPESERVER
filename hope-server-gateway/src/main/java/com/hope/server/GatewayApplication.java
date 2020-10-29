@@ -17,11 +17,12 @@ import org.springframework.core.env.Environment;
 @EnableConfigurationProperties({YmlConfig.class})
 public class GatewayApplication {
 
-    private static Logger logger = LoggerFactory.getLogger(GatewayApplication.class);
 
     public static void main(String[] args) {
-        Environment environment = SpringApplication.run(GatewayApplication.class, args).getEnvironment();
-        StartUtils.logApplicationInfo(logger, environment);
+        Environment environment = SpringApplication
+                .run(GatewayApplication.class, args)
+                .getEnvironment();
+        StartUtils.logApplicationInfo(environment);
     }
 
 }

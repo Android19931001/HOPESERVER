@@ -124,6 +124,7 @@
           <element id="library" level="project" name="Maven: io.github.openfeign:feign-slf4j:10.1.0" />
           <element id="library" level="project" name="Maven: io.github.openfeign:feign-hystrix:10.1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:5.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
           <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-core:3.3.1" />
           <element id="library" level="project" name="Maven: com.baomidou:mybatis-plus-annotation:3.3.1" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:3.1" />
@@ -139,6 +140,7 @@
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.15" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.4" />
           <element id="library" level="project" name="Maven: io.dropwizard.metrics:metrics-annotation:4.0.5" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.60" />
         </element>
       </element>
       <element id="directory" name="META-INF">

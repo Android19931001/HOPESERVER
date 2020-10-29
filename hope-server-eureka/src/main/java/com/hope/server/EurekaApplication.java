@@ -1,5 +1,6 @@
 package com.hope.server;
 
+import com.server.service.utils.StartUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -17,13 +18,10 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @EnableEurekaServer
 public class EurekaApplication extends WebSecurityConfigurerAdapter {
 
-    private static Logger logger = LoggerFactory.getLogger(EurekaApplication.class);
 
     public static void main(String[] args) {
         Environment environment = SpringApplication.run(EurekaApplication.class, args).getEnvironment();
-        String hostName = environment.getProperty("server.instance.hostname");
-        logger.info("\n--------------------------------------------------------\nEureka local address : {}\n" +
-                "--------------------------------------------------------\n", "http://" + hostName + ":4670");
+        StartUtils.logApplicationInfo(environment);
     }
 
     /**

@@ -84,6 +84,13 @@
             <artifactId>metrics-annotation</artifactId>
             <version>4.0.5</version>
         </dependency>
+
+        <!--json处理工具-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.60</version>
+        </dependency>
     </dependencies>
 
     <build>

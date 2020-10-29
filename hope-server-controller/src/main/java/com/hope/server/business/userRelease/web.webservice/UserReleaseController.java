@@ -7,6 +7,7 @@ import com.hope.server.api.longUserRelease.domain.LongUserRelease;
 import com.hope.server.business.userRelease.dto.UserReleaseDTO;
 import com.hope.server.business.userRelease.service.UserReleaseService;
 import com.server.service.base.Result;
+import com.server.service.utils.Res;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,16 @@ public class UserReleaseController {
 
     @Autowired
     UserReleaseService userReleaseService;
+
+
+    @Timed
+    @GetMapping("/showSomeInfo")
+    public Result showSomeInfo(String versionName) {
+        if ("2.3.0".equals(versionName)) {
+            return Res.ok(true);
+        }
+        return Res.ok(false);
+    }
 
 
     /**

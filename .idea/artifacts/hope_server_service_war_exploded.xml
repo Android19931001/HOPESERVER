@@ -130,6 +130,7 @@
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.15" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.4" />
           <element id="library" level="project" name="Maven: io.dropwizard.metrics:metrics-annotation:4.0.5" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.60" />
         </element>
       </element>
       <element id="directory" name="META-INF">
