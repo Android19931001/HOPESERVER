@@ -29,7 +29,7 @@ public class UserReleaseController {
     @Timed
     @GetMapping("/showSomeInfo")
     public Result showSomeInfo(String versionName) {
-        if ("2.3.0".equals(versionName)) {
+        if ("2.3.1".equals(versionName)) {
             return Res.ok(true);
         }
         return Res.ok(false);
