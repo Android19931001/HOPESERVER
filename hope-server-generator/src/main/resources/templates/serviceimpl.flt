@@ -1,7 +1,7 @@
 package ${packageName}.${tabChFileName}.service.impl;
 
 import com.server.service.base.BaseServiceImpl;
-import ${packageName}.${tabChFileName}.domain.${tableChName};
+import ${packageName}.${tabChFileName}.dto.${tableChName};
 import ${packageName}.${tabChFileName}.mapper.${tableChName}Mapper;
 import ${packageName}.${tabChFileName}.service.${tableChName}Service;
 import org.springframework.stereotype.Service;

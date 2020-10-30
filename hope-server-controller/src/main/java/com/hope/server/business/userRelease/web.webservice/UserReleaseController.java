@@ -25,17 +25,6 @@ public class UserReleaseController {
     @Autowired
     UserReleaseService userReleaseService;
 
-
-    @Timed
-    @GetMapping("/showSomeInfo")
-    public Result showSomeInfo(String versionName) {
-        if ("2.3.1".equals(versionName)) {
-            return Res.ok(true);
-        }
-        return Res.ok(false);
-    }
-
-
     /**
      * 查询用户发布的作品
      *

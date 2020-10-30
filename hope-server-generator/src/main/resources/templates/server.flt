@@ -4,7 +4,7 @@ package ${packageName}.${tabChFileName}.web.webservice;
 import com.server.service.base.BaseNoResp;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import ${packageName}.${tabChFileName}.domain.${tableChName};
+import ${packageName}.${tabChFileName}.dto.${tableChName};
 import ${packageName}.${tabChFileName}.service.${tableChName}Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

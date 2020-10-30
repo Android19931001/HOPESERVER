@@ -1,4 +1,4 @@
-package ${packageName}.${tabChFileName}.domain;
+package ${packageName}.${tabChFileName}.dto;
 
 import com.server.service.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;

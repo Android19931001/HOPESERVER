@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hope.server.business.versionRelease.mapper.VersionReleaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hope.server.business.versionRelease.dto.VersionReleaseDTO">
+        <id column="id" property="id" />
+        <result column="version_code" property="versionCode"/>
+        <result column="version_name" property="versionName"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="update_date" property="updateDate"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,version_code AS versionCode,version_name AS versionName,created_date AS createdDate,update_date AS updateDate
+    </sql>
+
+</mapper>
