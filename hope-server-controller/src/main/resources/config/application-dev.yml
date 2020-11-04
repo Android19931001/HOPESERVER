@@ -10,6 +10,8 @@ eureka:
 
 
 #在application.yml中加入全局调用的变量是使用instance开头，子类就可以根据要求自己定义了
+properties:
+  filePath: ${user.home}/root/data
 instance:
   Service:
     ServiceName: hope-server-service

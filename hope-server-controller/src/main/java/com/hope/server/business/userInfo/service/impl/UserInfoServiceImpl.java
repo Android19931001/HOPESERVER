@@ -3,12 +3,14 @@ package com.hope.server.business.userInfo.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hope.server.api.longUserInfo.domain.LongUserInfo;
 import com.hope.server.api.longUserInfo.service.LongUserInfoService;
+import com.hope.server.business.userInfo.dto.UserInfoDTO;
 import com.hope.server.business.userInfo.mapper.UserInfoMapper;
 import com.hope.server.business.userInfo.service.UserInfoService;
 import com.server.service.base.Result;
 import com.server.service.utils.Res;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -59,7 +61,8 @@ public class UserInfoServiceImpl implements UserInfoService {
             log.info("保存用户信息异常", e);
             return Res.error("保存用户信息异常");
         }
-        result.setUserPwd("");
-        return Res.ok(result);
+        UserInfoDTO userInfoDTO = new UserInfoDTO();
+        BeanUtils.copyProperties(result,userInfoDTO);
+        return Res.ok(userInfoDTO);
     }
 }

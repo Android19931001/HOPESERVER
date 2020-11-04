@@ -6,12 +6,14 @@ import com.hope.server.business.versionRelease.service.VersionReleaseService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author wangning
  */
 @Slf4j
 @Service
+@Transactional(rollbackFor = Exception.class)
 public class VersionReleaseServiceImpl implements VersionReleaseService {
 
     @Autowired

@@ -31,9 +31,5 @@ public class UserInfoDTO extends BaseEntity{
      * 用户手机版本号
      */
     private String phoneVersion;
-    /**
-     * 用户登录密码
-     */
-    private String userPwd;
 
 }
