@@ -28,7 +28,7 @@ public class FileHandlerController {
     public Result getHopeLongImage(HttpServletResponse response) {
         try {
             System.out.println("路径为：" + propertiesQuery.getFilePath());
-            File file = new File("/Users/wangning/Downloads/logo.png");
+            File file = new File("/root/data/logo.png");
             FileInputStream is = new FileInputStream(file);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             OutputStream os = response.getOutputStream();
