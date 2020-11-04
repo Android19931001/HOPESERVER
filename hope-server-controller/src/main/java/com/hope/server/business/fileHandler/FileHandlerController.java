@@ -25,24 +25,28 @@ public class FileHandlerController {
 
     @Timed
     @GetMapping("/hope-long/text")
-    public Result getHopeLongImage(HttpServletResponse response) {
+    public void getHopeLongImage(HttpServletResponse response) {
+
         try {
             System.out.println("路径为：" + propertiesQuery.getFilePath());
-//            File file = new File("/root/data/logo.png");
-//            FileInputStream is = new FileInputStream(file);
-//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//            OutputStream os = response.getOutputStream();
-//            int ch = 0;
-//            while (-1 != (ch = is.read())) {
-//                baos.write(ch);
-//            }
-//            os.write(baos.toByteArray());
-//            is.close();
-//            baos.close();
-//            os.close();
-        } catch (Exception e) {
-
+            File file = new File(propertiesQuery.getFilePath() + File.separator + "logo.png");
+            FileInputStream is = new FileInputStream(file);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            OutputStream os = response.getOutputStream();
+            int ch = 0;
+            while (-1 != (ch = is.read())) {
+                baos.write(ch);
+            }
+            os.write(baos.toByteArray());
+            is.close();
+            baos.close();
+            os.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return Res.ok(propertiesQuery.getFilePath());
+
+
     }
 }
