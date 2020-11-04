@@ -21,5 +21,3 @@ eureka:
       prefer-ip-address: true
       instance-id: hope-gateway-client
 
-properties:
-  filePath: ${user.home}/root/data
