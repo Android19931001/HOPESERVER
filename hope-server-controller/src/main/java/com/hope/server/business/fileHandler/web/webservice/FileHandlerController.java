@@ -61,7 +61,7 @@ public class FileHandlerController {
     public void getHopeLongImage(@PathVariable("fileId") String fileId, HttpServletResponse servletResponse) {
         try {
             //默认图片文件路径
-            String filePath = propertiesQuery.getFilePath() + "logo.png";
+            String filePath = propertiesQuery.getFilePath() + File.separator + "logo.png";
             if (StringUtils.isNotEmpty(fileId)) {
                 LongHopeFile longHopeFile = longHopeFileService.getById(fileId);
                 if (null != longHopeFile) {
