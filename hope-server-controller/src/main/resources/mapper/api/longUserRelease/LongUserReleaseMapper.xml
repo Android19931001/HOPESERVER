@@ -10,11 +10,14 @@
         <result column="re_img_url" property="reImgUrl"/>
         <result column="re_video_url" property="reVideoUrl"/>
         <result column="re_date" property="reDate"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="update_date" property="updateDate"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,re_user_id AS reUserId,re_text AS reText,re_img_url AS reImgUrl,re_video_url AS reVideoUrl,re_date AS reDate
+        id,re_user_id AS reUserId,re_text AS reText,re_img_url AS reImgUrl,re_video_url AS reVideoUrl,re_date AS reDate,update_date AS updateDate,created_by AS createdBy,created_date AS createdDate
     </sql>
 
 </mapper>

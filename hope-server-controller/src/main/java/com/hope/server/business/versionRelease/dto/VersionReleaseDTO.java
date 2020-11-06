@@ -1,6 +1,5 @@
 package com.hope.server.business.versionRelease.dto;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.server.service.base.BaseEntity;
 import lombok.Data;
 
@@ -24,9 +23,6 @@ public class VersionReleaseDTO extends BaseEntity{
      * 
      */
     private String versionName;
-    /**
-     * 
-     */
-    private String updateDate;
+
 
 }

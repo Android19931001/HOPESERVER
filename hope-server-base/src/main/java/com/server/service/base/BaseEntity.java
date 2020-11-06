@@ -19,6 +19,9 @@ public class BaseEntity<T extends Model<?>> extends Model<T> implements Serializ
 //    public Instant lastModifiedDate;
 //
     public String createdBy;
+
+
+    public Instant updateDate;
 //
 //    public String lastModifiedBy;
 //

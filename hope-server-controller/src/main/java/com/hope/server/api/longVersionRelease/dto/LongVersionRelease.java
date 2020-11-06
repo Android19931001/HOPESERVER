@@ -25,9 +25,5 @@ public class LongVersionRelease extends BaseEntity{
      * 
      */
     private String versionName;
-    /**
-     * 
-     */
-    private String updateDate;
 
 }

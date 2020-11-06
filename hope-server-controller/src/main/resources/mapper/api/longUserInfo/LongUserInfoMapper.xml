@@ -12,11 +12,12 @@
         <result column="user_pwd" property="userPwd"/>
         <result column="created_date" property="createdDate"/>
         <result column="created_by" property="createdBy"/>
+        <result column="update_date" property="updateDate"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,user_name AS userName,phone_number AS phoneNumber,phone_type AS phoneType,phone_version AS phoneVersion,user_pwd AS userPwd,created_date AS createdDate,created_by AS createdBy
+        id,user_name AS userName,phone_number AS phoneNumber,phone_type AS phoneType,phone_version AS phoneVersion,user_pwd AS userPwd,created_date AS createdDate,created_by AS createdBy,update_date AS updateDate
     </sql>
 
 </mapper>

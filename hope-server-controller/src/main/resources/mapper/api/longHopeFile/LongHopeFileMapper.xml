@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hope.server.api.longHopeFile.mapper.LongHopeFileMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hope.server.api.longHopeFile.dto.LongHopeFile">
+        <id column="id" property="id" />
+        <result column="file_upload_user_id" property="fileUploadUserId"/>
+        <result column="file_upload_user_name" property="fileUploadUserName"/>
+        <result column="file_upload_path" property="fileUploadPath"/>
+        <result column="file_upload_type" property="fileUploadType"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="update_date" property="updateDate"/>
+        <result column="created_by" property="createdBy"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,file_upload_user_id AS fileUploadUserId,file_upload_user_name AS fileUploadUserName,file_upload_path AS fileUploadPath,file_upload_type AS fileUploadType,created_date AS createdDate,update_date AS updateDate,created_by AS createdBy
+    </sql>
+
+</mapper>
