@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration>
 <configuration scan="true">
-
     <!--全局定义的上下文变量，可有可无，意义不大-->
     <contextName>long-log-context</contextName>
 
@@ -9,15 +8,18 @@
     <!--<property name="long-log.logDir" value="${user.home}/data}"></property>-->
 
     <!--控制台输出日志配置-->
-        <appender name="LONG-LOG-CONSOLE" class="ch.qos.logback.core.ConsoleAppender" >
+        <appender name="LONG-LOG-CONSOLE" class="ch.qos.logback.core.ConsoleAppender" additivity="false">
+            <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+                <level>info</level>
+            </filter>
             <encoder>
-                <charset>UTF-8</charset>
-                <pattern>%red(%d{YYYY-MM-dd HH:mm:ss}) %yellow(%level) - %yellow([%thread]) %green(%msg) %n</pattern>
+                <charset>utf-8</charset>
+                <Pattern>%red(%d{YYYY-MM-dd HH:mm:ss}) %yellow(%level) - %yellow([%thread]) %green(%msg) %n</Pattern>
             </encoder>
         </appender>
 
         <!--日志文件输出配置-->
-        <appender name="LONG-LOG-LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <appender name="LONG-LOG-LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender" additivity="false">
             <filter class="ch.qos.logback.classic.filter.LevelFilter">
                 <!--过滤 DEBUG日志 不需要这个东西-->
                 <level>DEBUG</level>
@@ -29,21 +31,21 @@
             <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则-->
             <!--如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天-->
             <!--的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
-            <File>${user.home}/data/long-hope-logFile/hope-controller.log</File>
+            <!--<File>${user.home}/data/long-hope-logFile/hope-controller.log</File>-->
             <!--通过时间滚动的策略-->
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <!--把昨天的日志文件重新命名，带有日期-->
-                <FileNamePattern>${user.home}/data/long-hope-logFile/hope-controller(%d{YYYY-MM-dd}).log</FileNamePattern>
+                <FileNamePattern>${user.home}/data/long-hope-logFile/logs-%d{YYYYMMdd}.log</FileNamePattern>
                 <!--保留60天的日志文件-->
                 <maxHistory>60</maxHistory>
                 <!--当日止文件超过10GB的时候就会删除旧的日志文件-->
-                <totalSizeCap>10GB</totalSizeCap>
+                <!--<totalSizeCap>10GB</totalSizeCap>-->
             </rollingPolicy>
             <!--修改日志输出编码格式化-->
             <encoder>
-                <charset>GBK,UTF-8</charset>
+                <charset>utf-8</charset>
                 <!--日志输出格式-->
-                <pattern>%d{YYYY-MM-dd HH:mm:ss} %level - [%thread] %msg %n</pattern>
+                <Pattern>%d{YYYY-MM-dd HH:mm:ss} %level - [%thread] %msg %n</Pattern>
             </encoder>
         </appender>
 

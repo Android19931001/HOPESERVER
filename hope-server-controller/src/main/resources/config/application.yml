@@ -13,8 +13,5 @@ spring:
     active: @start-profile@
 server:
   port: 4672
-logging:
-  config:
-    classpath: logback-spring.xml
 
 
