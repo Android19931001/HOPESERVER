@@ -9,8 +9,7 @@
     <!--<property name="long-log.logDir" value="${user.home}/data}"></property>-->
 
     <!--控制台输出日志配置-->
-    <springProfile name="dev">
-        <appender name="LONG-LOG-CONSOLE-DEV" class="ch.qos.logback.core.ConsoleAppender" >
+        <appender name="LONG-LOG-CONSOLE" class="ch.qos.logback.core.ConsoleAppender" >
             <encoder>
                 <charset>UTF-8</charset>
                 <pattern>%red(%d{YYYY-MM-dd HH:mm:ss}) %yellow(%level) - %yellow([%thread]) %green(%msg) %n</pattern>
@@ -42,7 +41,7 @@
             </rollingPolicy>
             <!--修改日志输出编码格式化-->
             <encoder>
-                <charset>UTF-8</charset>
+                <charset>GBK,UTF-8</charset>
                 <!--日志输出格式-->
                 <pattern>%d{YYYY-MM-dd HH:mm:ss} %level - [%thread] %msg %n</pattern>
             </encoder>
@@ -51,58 +50,9 @@
         <!--指定日志打印级别-->
         <root level="info">
             <!--it's necessary,when you define a 'appender' you must add a the same name with 'appender' and 'root' must below 'appender'-->
-            <appender-ref ref="LONG-LOG-CONSOLE-DEV"/>
+            <appender-ref ref="LONG-LOG-CONSOLE"/>
             <appender-ref ref="LONG-LOG-LOGFILE"/>
         </root>
-
-    </springProfile>
-
-    <springProfile name="prod">
-        <appender name="LONG-LOG-CONSOLE-PROD" class="ch.qos.logback.core.ConsoleAppender" >
-            <encoder>
-                <charset>UTF-8</charset>
-                <pattern>%d{YYYY-MM-dd HH:mm:ss} %level - [%thread] %msg %n</pattern>
-            </encoder>
-        </appender>
-        <!--日志文件输出配置-->
-        <appender name="LONG-LOG-LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-            <filter class="ch.qos.logback.classic.filter.LevelFilter">
-                <!--过滤 DEBUG日志 不需要这个东西-->
-                <level>DEBUG</level>
-                <!--匹配到就禁止（应该匹配到DEBUG就不让输出，暂时这么理解） 不知道禁止啥-->
-                <onMatch>DENY</onMatch>
-                <!--没有匹配到就允许（应该不是DEBUG日志就让输出，暂时这么理解） 不知道允许啥-->
-                <onMismatch>ACCEPT</onMismatch>
-            </filter>
-            <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则-->
-            <!--如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天-->
-            <!--的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
-            <File>${user.home}/data/long-hope-logFile/hope-controller.log</File>
-            <!--通过时间滚动的策略-->
-            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <!--把昨天的日志文件重新命名，带有日期-->
-                <FileNamePattern>${user.home}/data/long-hope-logFile/hope-controller(%d{YYYY-MM-dd}).log</FileNamePattern>
-                <!--保留60天的日志文件-->
-                <maxHistory>60</maxHistory>
-                <!--当日止文件超过10GB的时候就会删除旧的日志文件-->
-                <totalSizeCap>10GB</totalSizeCap>
-            </rollingPolicy>
-            <!--修改日志输出编码格式化-->
-            <encoder>
-                <charset>UTF-8</charset>
-                <!--日志输出格式-->
-                <pattern>%d{YYYY-MM-dd HH:mm:ss} %level - [%thread] %msg %n</pattern>
-            </encoder>
-        </appender>
-
-        <!--指定日志打印级别-->
-        <root level="info">
-            <!--it's necessary,when you define a 'appender' you must add a the same name with 'appender' and 'root' must below 'appender'-->
-            <appender-ref ref="LONG-LOG-CONSOLE-PROD"/>
-            <appender-ref ref="LONG-LOG-LOGFILE"/>
-        </root>
-    </springProfile>
-
 
 
 </configuration>
