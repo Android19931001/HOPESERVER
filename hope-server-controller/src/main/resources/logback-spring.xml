@@ -35,7 +35,7 @@
             <!--通过时间滚动的策略-->
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <!--把昨天的日志文件重新命名，带有日期-->
-                <FileNamePattern>${user.home}/data/long-hope-logFile/logs-%d{YYYYMMdd}.log</FileNamePattern>
+                <FileNamePattern>${user.home}/data/long-hope-logFile/LogsFile-%d{YYYYMMdd}.log</FileNamePattern>
                 <!--保留60天的日志文件-->
                 <maxHistory>60</maxHistory>
                 <!--当日止文件超过10GB的时候就会删除旧的日志文件-->
