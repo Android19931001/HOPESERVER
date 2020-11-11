@@ -53,7 +53,7 @@
         <root level="info">
             <!--it's necessary,when you define a 'appender' you must add a the same name with 'appender' and 'root' must below 'appender'-->
             <appender-ref ref="LONG-LOG-CONSOLE"/>
-            <!--<appender-ref ref="LONG-LOG-LOGFILE"/>-->
+            <appender-ref ref="LONG-LOG-LOGFILE"/>
         </root>
 
 
