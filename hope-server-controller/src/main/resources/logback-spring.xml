@@ -31,11 +31,11 @@
             <!--日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则-->
             <!--如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天-->
             <!--的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
-            <!--<File>${user.home}/data/long-hope-logFile/hope-controller.log</File>-->
+            <File>${user.home}/data/long-hope-logFile/HopeLogsFile.log</File>
             <!--通过时间滚动的策略-->
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <!--把昨天的日志文件重新命名，带有日期-->
-                <FileNamePattern>${user.home}/data/long-hope-logFile/LogsFile-%d{YYYYMMdd}.log</FileNamePattern>
+                <FileNamePattern>${user.home}/data/long-hope-logFile/HopeLogsFile-%d{YYYYMMdd}.log</FileNamePattern>
                 <!--保留60天的日志文件-->
                 <maxHistory>60</maxHistory>
                 <!--当日止文件超过10GB的时候就会删除旧的日志文件-->
@@ -53,7 +53,7 @@
         <root level="info">
             <!--it's necessary,when you define a 'appender' you must add a the same name with 'appender' and 'root' must below 'appender'-->
             <appender-ref ref="LONG-LOG-CONSOLE"/>
-            <appender-ref ref="LONG-LOG-LOGFILE"/>
+            <!--<appender-ref ref="LONG-LOG-LOGFILE"/>-->
         </root>
 
 
