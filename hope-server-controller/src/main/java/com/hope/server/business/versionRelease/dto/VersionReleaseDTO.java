@@ -24,5 +24,7 @@ public class VersionReleaseDTO extends BaseEntity{
      */
     private String versionName;
 
+    private String appName;
+
 
 }

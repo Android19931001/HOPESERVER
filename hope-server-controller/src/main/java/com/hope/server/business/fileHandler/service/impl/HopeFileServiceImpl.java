@@ -5,6 +5,7 @@ import com.hope.server.api.longHopeFile.dto.LongHopeFile;
 import com.hope.server.api.longHopeFile.service.LongHopeFileService;
 import com.hope.server.api.longUserInfo.domain.LongUserInfo;
 import com.hope.server.api.longUserInfo.service.LongUserInfoService;
+import com.hope.server.business.fileHandler.dto.HopeFileDTO;
 import com.hope.server.business.fileHandler.service.HopeFileService;
 import com.hope.server.utils.PropertiesQuery;
 import com.server.service.base.Result;
@@ -56,6 +57,8 @@ public class HopeFileServiceImpl implements HopeFileService {
         InputStream inputStream;
         FileOutputStream fos;
         File file = null;
+        //文件的访问地址
+        String imgFilePath = "";
         try {
             String filePath = propertiesQuery.getFilePath() + File.separator + id;
             File directoryPath = new File(filePath);
@@ -78,6 +81,8 @@ public class HopeFileServiceImpl implements HopeFileService {
                 file.delete();
                 return Res.error("用户不存在");
             }
+            imgFilePath = propertiesQuery.getIpAddress() + "/webservice/fileHandler/hope-file/" + file.getName();
+
             if (type.contains("1")) {
                 QueryWrapper fileWrapper = new QueryWrapper();
                 fileWrapper.eq("file_upload_user_id", id);
@@ -88,7 +93,10 @@ public class HopeFileServiceImpl implements HopeFileService {
                     new File(existFileRecord.getFileUploadPath()).delete();
                     longHopeFileService.removeById(existFileRecord.getId());
                 }
+                longUserInfo.setHeadPortraitUrl(imgFilePath);
+                longUserInfoService.saveOrUpdate(longUserInfo);
             }
+            //将文件信息保存到数据库中
             LongHopeFile longHopeFile = new LongHopeFile();
             longHopeFile.setId(file.getName());
             longHopeFile.setFileUploadPath(file.getAbsolutePath());
@@ -103,7 +111,22 @@ public class HopeFileServiceImpl implements HopeFileService {
             log.error("上传文件发生异常", e);
             return Res.error("上传文件发生异常！");
         }
-        return Res.ok("上传成功");
+        return Res.success(imgFilePath);
+    }
+
+    /**
+     * 查看APP更新信息
+     *
+     * @param * @param id
+     * @return com.hope.server.business.fileHandler.dto.HopeFileDTO
+     * @author wangning
+     * @date 2020/11/16
+     */
+    @Override
+    public HopeFileDTO queryUpdateInfo(String id) {
+        HopeFileDTO hopeFileDTO = new HopeFileDTO();
+
+        return hopeFileDTO;
     }
 
 

@@ -9,6 +9,7 @@
         <result column="phone_number" property="phoneNumber"/>
         <result column="phone_type" property="phoneType"/>
         <result column="phone_version" property="phoneVersion"/>
+        <result column="head_portrait_url" property="headPortraitUrl"/>
         <result column="user_pwd" property="userPwd"/>
         <result column="created_date" property="createdDate"/>
         <result column="created_by" property="createdBy"/>
@@ -17,7 +18,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,user_name AS userName,phone_number AS phoneNumber,phone_type AS phoneType,phone_version AS phoneVersion,user_pwd AS userPwd,created_date AS createdDate,created_by AS createdBy,update_date AS updateDate
+        id,user_name AS userName,phone_number AS phoneNumber,phone_type AS phoneType,phone_version AS phoneVersion,head_portrait_url AS headPortraitUrl,user_pwd AS userPwd,created_date AS createdDate,created_by AS createdBy,update_date AS updateDate
     </sql>
 
 </mapper>

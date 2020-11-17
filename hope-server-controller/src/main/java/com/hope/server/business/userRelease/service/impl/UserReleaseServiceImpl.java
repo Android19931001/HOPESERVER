@@ -75,11 +75,12 @@ public class UserReleaseServiceImpl implements UserReleaseService {
             LongUserInfo longUserInfo = longUserInfoService.getOne(userWrapper);
             if (null != longUserInfo) {
                 target.setReUserName(longUserInfo.getUserName());
+                target.setHeadPortraitUrl(longUserInfo.getHeadPortraitUrl());
             }
             resultList.add(target);
         }
         Page<UserReleaseDTO> resultPage = new Page<>();
-        BeanUtils.copyProperties(result,resultPage);
+        BeanUtils.copyProperties(result, resultPage);
         resultPage.setRecords(resultList);
         return Res.ok(resultPage);
     }

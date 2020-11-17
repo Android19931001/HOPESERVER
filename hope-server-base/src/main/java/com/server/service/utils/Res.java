@@ -46,6 +46,18 @@ public class Res {
         return instance(Contants.SUCCESS, Contants.SUCCESS_MSG, object);
     }
 
+    /**
+     * 只用来返回data只是字符串的情况
+     *
+     * @param * @param object
+     * @return com.server.service.base.Result
+     * @author wangning
+     * @date 2020/11/11
+     */
+    public static Result success(String object) {
+        return instance(Contants.SUCCESS, Contants.SUCCESS_MSG, object);
+    }
+
 
     /**
      * 用来返回一些没有出参体的返回数据用

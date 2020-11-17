@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @TableName("long_user_info")
-public class LongUserInfo extends BaseEntity{
+public class LongUserInfo extends BaseEntity {
 
     /**
      * 用户表主键
@@ -37,5 +37,10 @@ public class LongUserInfo extends BaseEntity{
      * 用户登录密码
      */
     private String userPwd;
+
+    /**
+     * 用户头像
+     */
+    private String headPortraitUrl;
 
 }

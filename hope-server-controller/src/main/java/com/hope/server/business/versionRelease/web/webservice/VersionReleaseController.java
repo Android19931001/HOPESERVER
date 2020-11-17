@@ -19,8 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/webservice")
 public class VersionReleaseController {
 
+
+
     @Autowired
     VersionReleaseService versionReleaseService;
+
 
     /**
      * ios是否显示人脸识别按钮

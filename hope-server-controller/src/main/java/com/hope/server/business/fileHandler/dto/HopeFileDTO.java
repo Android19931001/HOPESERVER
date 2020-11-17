@@ -1,6 +1,5 @@
 package com.hope.server.business.fileHandler.dto;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.server.service.base.BaseEntity;
 import lombok.Data;
 

@@ -9,7 +9,7 @@ import lombok.Data;
  */
 
 @Data
-public class UserInfoDTO extends BaseEntity{
+public class UserInfoDTO extends BaseEntity {
 
     /**
      * 用户表主键
@@ -32,4 +32,8 @@ public class UserInfoDTO extends BaseEntity{
      */
     private String phoneVersion;
 
+    /**
+     * 用户头像地址
+     */
+    private String headPortraitUrl;
 }

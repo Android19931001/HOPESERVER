@@ -15,4 +15,6 @@ public interface VersionReleaseService {
      * @date 2020/10/30
      */
     boolean isShowFaceCredit(String versionName);
+
+
 }

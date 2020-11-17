@@ -10,5 +10,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "properties", ignoreUnknownFields = false)
 public class PropertiesQuery {
     private String filePath;
-    private String serverIp;
+    private String ipAddress;
 }

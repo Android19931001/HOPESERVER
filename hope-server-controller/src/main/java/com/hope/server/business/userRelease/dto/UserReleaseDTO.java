@@ -40,4 +40,9 @@ public class UserReleaseDTO extends BaseEntity {
      */
     private String reDate;
 
+    /**
+     * 用户头像
+     */
+    private String headPortraitUrl;
+
 }
