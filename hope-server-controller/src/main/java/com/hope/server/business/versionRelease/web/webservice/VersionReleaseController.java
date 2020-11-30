@@ -2,6 +2,8 @@ package com.hope.server.business.versionRelease.web.webservice;
 
 
 import com.codahale.metrics.annotation.Timed;
+import com.hope.server.api.longVersionRelease.dto.LongVersionRelease;
+import com.hope.server.business.versionRelease.dto.VersionReleaseDTO;
 import com.hope.server.business.versionRelease.service.VersionReleaseService;
 import com.server.service.base.Result;
 import com.server.service.utils.Res;
@@ -9,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.nio.file.Files;
 
 
 /**
@@ -24,6 +28,22 @@ public class VersionReleaseController {
     @Autowired
     VersionReleaseService versionReleaseService;
 
+
+
+    /**
+     * 查询APP更新信息
+     * @author wangning
+     * @date 2020/11/18
+     * @param  * @param versionRelease
+     * @return com.hope.server.business.versionRelease.dto.VersionReleaseDTO
+     *
+     */
+    @Timed
+    @PostMapping("/queryUpdateInfo")
+    public Result queryUpdateInfo(@RequestBody LongVersionRelease versionRelease) {
+        log.info("查看app更新信息入参---------------->{}",versionRelease);
+        return versionReleaseService.queryUpdateInfo(versionRelease);
+    }
 
     /**
      * ios是否显示人脸识别按钮

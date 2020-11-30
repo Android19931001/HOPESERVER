@@ -10,6 +10,17 @@ import com.server.service.base.Result;
  * @author wangning
  */
 public interface UserReleaseService {
+
+    /**
+     * 根据作品id查看作品详情
+     *
+     * @param * @param artId
+     * @return com.server.service.base.Result
+     * @author wangning
+     * @date 2020/11/23
+     */
+    Result queryUserArtById(String artId);
+
     /**
      * 查询用户发布的作品
      *

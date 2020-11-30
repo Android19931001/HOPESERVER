@@ -23,14 +23,4 @@ public interface HopeFileService {
     Result handlerUploadFile(HttpServletRequest servletRequest);
 
 
-    /**
-     * 查看APP更新信息
-     *
-     * @param * @param
-     * @return com.hope.server.business.fileHandler.dto.HopeFileDTO
-     * @author wangning
-     * @date 2020/11/16
-     */
-    HopeFileDTO queryUpdateInfo(String id);
-
 }

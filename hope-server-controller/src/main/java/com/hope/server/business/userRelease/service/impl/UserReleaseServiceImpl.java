@@ -33,22 +33,48 @@ public class UserReleaseServiceImpl implements UserReleaseService {
     @Autowired
     LongUserReleaseService longUserReleaseService;
 
-
     @Autowired
     LongUserInfoService longUserInfoService;
 
 
-    private UserReleaseMapper userReleaseMapper;
+    /**
+     * 根据作品id查看作品详情
+     *
+     * @param * @param artId
+     * @return com.server.service.base.Result
+     * @author wangning
+     * @date 2020/11/23
+     */
+    @Override
+    public Result queryUserArtById(String artId) {
+        if (StringUtils.isEmpty(artId)) {
+            return Res.error("作品Id不能为空");
+        }
+        UserReleaseDTO userReleaseDTO = null;
+        try {
+            LongUserRelease longUserRelease = longUserReleaseService.getById(artId);
+            if (null == longUserRelease) {
+                return Res.error("根据id未查到相关作品");
+            }
+            userReleaseDTO = new UserReleaseDTO();
+            BeanUtils.copyProperties(longUserRelease, userReleaseDTO);
+            LongUserInfo longUserInfo = longUserInfoService.getById(userReleaseDTO.getReUserId());
+            if (null == longUserInfo) {
+                return Res.error("未查询到用户信息，用户可能不再存在");
+            }
+            userReleaseDTO.setHeadPortraitUrl(longUserInfo.getHeadPortraitUrl());
+            userReleaseDTO.setReUserName(longUserInfo.getUserName());
+        } catch (Exception e) {
+            log.error("根据id获取相关作品异常-------->{}", e);
+        }
 
-
-    public UserReleaseServiceImpl(UserReleaseMapper userReleaseMapper) {
-        this.userReleaseMapper = userReleaseMapper;
+        return Res.ok(userReleaseDTO);
     }
 
     /**
      * 查询用户发布的作品
      *
-     * @param *    @param userReleaseDTO
+     * @param @param userReleaseDTO
      * @param page
      * @return com.server.service.base.Result
      * @author wangning

@@ -13,17 +13,7 @@ import java.time.Instant;
  */
 @Data
 public class BaseEntity<T extends Model<?>> extends Model<T> implements Serializable {
-
-    public Instant createdDate;
-//
-//    public Instant lastModifiedDate;
-//
-    public String createdBy;
-
-
-    public Instant updateDate;
-//
-//    public String lastModifiedBy;
-//
-//    public int versionLock;
+    private Instant createdDate;
+    private String createdBy;
+    private Instant updateDate;
 }

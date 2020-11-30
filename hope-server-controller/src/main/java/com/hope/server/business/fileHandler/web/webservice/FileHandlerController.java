@@ -36,20 +36,6 @@ public class FileHandlerController {
     LongHopeFileService longHopeFileService;
 
 
-    /**
-     * 查询APP更新信息
-     *
-     * @param * @param id
-     * @return void
-     * @author wangning
-     * @date 2020/11/12
-     */
-    @Timed
-    @PostMapping("/queryUpdateInfo")
-    public void queryUpdateInfo(LongVersionRelease versionRelease) {
-        log.info("查看");
-    }
-
 
     /**
      * 上传图片

@@ -25,6 +25,22 @@ public class UserReleaseController {
     @Autowired
     UserReleaseService userReleaseService;
 
+
+    /**
+     * 根据作品id查看作品详情
+     *
+     * @param * @param userArtId
+     * @return com.server.service.base.Result
+     * @author wangning
+     * @date 2020/11/23
+     */
+    @Timed
+    @GetMapping("release/queryUserArtById")
+    public Result queryUserArtById(String userArtId) {
+        log.info("查看用户发布的作品详情入参-------------->{}", userArtId);
+        return userReleaseService.queryUserArtById(userArtId);
+    }
+
     /**
      * 查询用户发布的作品
      *

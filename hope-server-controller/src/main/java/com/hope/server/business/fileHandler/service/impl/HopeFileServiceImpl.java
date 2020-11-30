@@ -114,20 +114,6 @@ public class HopeFileServiceImpl implements HopeFileService {
         return Res.success(imgFilePath);
     }
 
-    /**
-     * 查看APP更新信息
-     *
-     * @param * @param id
-     * @return com.hope.server.business.fileHandler.dto.HopeFileDTO
-     * @author wangning
-     * @date 2020/11/16
-     */
-    @Override
-    public HopeFileDTO queryUpdateInfo(String id) {
-        HopeFileDTO hopeFileDTO = new HopeFileDTO();
-
-        return hopeFileDTO;
-    }
 
 
 }
