@@ -11,8 +11,13 @@ spring:
       enabled: true
   profiles:
     active: @start-profile@
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 15MB
 server:
   port: 4672
+
 
 logging:
   config:
