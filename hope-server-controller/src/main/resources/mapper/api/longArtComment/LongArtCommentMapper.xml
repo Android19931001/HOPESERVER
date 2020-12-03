@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hope.server.api.longArtComment.mapper.LongArtCommentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hope.server.api.longArtComment.dto.LongArtComment">
+        <id column="id" property="id"/>
+        <result column="comment_user_id" property="commentUserId"/>
+        <result column="comment_user_name" property="commentUserName"/>
+        <result column="comment_content" property="commentContent"/>
+        <result column="is_author" property="isAuthor"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="update_date" property="updateDate"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,comment_user_id AS commentUserId,comment_user_name AS commentUserName,comment_content AS commentContent,is_author AS isAuthor,created_date AS createdDate,created_by AS createdBy,update_date AS updateDate
+    </sql>
+
+</mapper>
