@@ -56,7 +56,7 @@ public class ArtCommentController {
      * @date 2020/12/3
      */
     @Timed
-    @PostMapping("artComment/releaseComment")
+    @PostMapping("/artComment/releaseComment")
     public Result releaseComment(@RequestBody ArtCommentDTO artCommentDTO) {
         log.error("用户发表用户评论入参------>{}", artCommentDTO);
         try {
