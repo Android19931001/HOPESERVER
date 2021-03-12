@@ -4,6 +4,15 @@ spring:
     username: root
     password: Feilong@1993
     driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      connection-timeout: 600000
+      maximum-pool-size: 500
+      max-lifetime: 1800000
+      minimum-idle: 20
+      validation-timeout: 3000
+      idle-timeout: 60000
+      connection-init-sql: SET NAMES utf8mb4
   application:
     name: hope-server-controller
   cloud:

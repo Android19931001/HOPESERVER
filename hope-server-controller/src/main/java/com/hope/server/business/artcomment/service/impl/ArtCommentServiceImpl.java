@@ -17,6 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author wangning
  */
@@ -43,13 +47,30 @@ public class ArtCommentServiceImpl implements ArtCommentService {
      */
     @Override
     public Page<ArtCommentDTO> queryCommentByArtId(ArtCommentDTO artCommentDTO, Page<ArtCommentDTO> page) {
+
+
         QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.eq("id", artCommentDTO.getId());
+        queryWrapper.eq("comment_art_id", artCommentDTO.getId());
         Page<LongArtComment> origin = new Page<>();
         BeanUtils.copyProperties(page, origin);
         origin = longArtCommentService.page(origin, queryWrapper);
         Page<ArtCommentDTO> target = new Page<>();
         BeanUtils.copyProperties(origin, target);
+        List<ArtCommentDTO> resultArtComments = new ArrayList<>();
+        origin.getRecords().forEach(item -> {
+            ArtCommentDTO resultArtComment = new ArtCommentDTO();
+            LongUserInfo longUserInfo = longUserInfoService.getById(item.getCommentUserId());
+            if (null != longUserInfo) {
+                resultArtComment.setHeadPortraitUrl(longUserInfo.getHeadPortraitUrl());
+            }
+            resultArtComment.setCommentContent(item.getCommentContent());
+            resultArtComment.setCommentUserId(item.getCommentUserId());
+            resultArtComment.setCommentUserName(item.getCommentUserName());
+            resultArtComment.setId(item.getId());
+            resultArtComment.setIsAuthor(item.getIsAuthor());
+            resultArtComments.add(resultArtComment);
+        });
+        target.setRecords(resultArtComments);
         return target;
     }
 
@@ -65,6 +86,9 @@ public class ArtCommentServiceImpl implements ArtCommentService {
     public Result releaseComment(ArtCommentDTO artCommentDTO) {
         if (StringUtils.isEmpty(artCommentDTO.getCommentUserId())) {
             return Res.error("评论用户id不能为空");
+        }
+        if (StringUtils.isEmpty(artCommentDTO.getCommentArtId())) {
+            return Res.error("作品Id不能为空");
         }
         if (StringUtils.isEmpty(artCommentDTO.getCommentContent())) {
             return Res.error("评论内容不能为空");

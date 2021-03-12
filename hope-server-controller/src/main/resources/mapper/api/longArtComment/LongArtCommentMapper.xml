@@ -8,6 +8,7 @@
         <result column="comment_user_id" property="commentUserId"/>
         <result column="comment_user_name" property="commentUserName"/>
         <result column="comment_content" property="commentContent"/>
+        <result column="comment_art_id" property="commentArtId"/>
         <result column="is_author" property="isAuthor"/>
         <result column="created_date" property="createdDate"/>
         <result column="created_by" property="createdBy"/>
@@ -16,7 +17,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id,comment_user_id AS commentUserId,comment_user_name AS commentUserName,comment_content AS commentContent,is_author AS isAuthor,created_date AS createdDate,created_by AS createdBy,update_date AS updateDate
+        id,comment_user_id AS commentUserId,comment_user_name AS commentUserName,comment_art_id AS commentArtId,comment_content AS commentContent,is_author AS isAuthor,created_date AS createdDate,created_by AS createdBy,update_date AS updateDate
     </sql>
 
 </mapper>

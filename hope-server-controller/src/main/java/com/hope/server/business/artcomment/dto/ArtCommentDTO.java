@@ -9,7 +9,7 @@ import lombok.Data;
  */
 
 @Data
-public class ArtCommentDTO extends BaseEntity{
+public class ArtCommentDTO extends BaseEntity {
 
     /**
      * 评论id
@@ -19,6 +19,10 @@ public class ArtCommentDTO extends BaseEntity{
      * 评论者的用户ID
      */
     private String commentUserId;
+    /**
+     *作品id
+     */
+    public String commentArtId;
     /**
      * 评论者用户名
      */
@@ -31,5 +35,13 @@ public class ArtCommentDTO extends BaseEntity{
      * 1：作者本人；0：其他
      */
     private int isAuthor;
+
+    /**
+     * @param 评论的用户头像
+     * @return
+     * @author wangnin
+     * @date
+     */
+    public String headPortraitUrl;
 
 }

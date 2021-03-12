@@ -22,6 +22,10 @@ public class LongArtComment extends BaseEntity{
      */
     private String commentUserId;
     /**
+     *作品id
+     */
+    public String commentArtId;
+    /**
      * 评论者用户名
      */
     private String commentUserName;
