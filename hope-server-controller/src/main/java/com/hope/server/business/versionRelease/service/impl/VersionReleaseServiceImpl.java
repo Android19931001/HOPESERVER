@@ -1,5 +1,6 @@
 package com.hope.server.business.versionRelease.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.hope.server.api.longHopeFile.dto.LongHopeFile;
 import com.hope.server.api.longHopeFile.service.LongHopeFileService;
 import com.hope.server.api.longVersionRelease.dto.LongVersionRelease;
@@ -14,6 +15,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Map;
 
 /**
  * @author wangning
@@ -77,5 +80,29 @@ public class VersionReleaseServiceImpl implements VersionReleaseService {
             return Res.ok(releaseDTO);
         }
         return Res.error("当前版本无需更新!");
+    }
+
+
+//    orderType=1&initCustId=CUST201914323147894Ek2&factdate=2021-07-27&
+
+//    INSERT INTO `custom_uat`.`t_trade_record`(`order_no`, `contact_no`, `pay_money`, `poundage_rate`, `poundage`, `p_money`, `truely_pay`, `local_serial_no`, `serial_no_status`, `pay_serial_no`, `trade_status`, `periods`, `trade_type`, `pay_type`, `bu_or_pa`, `is_penalty`, `announce_result`, `is_push`, `is_handled`, `init_cust_id`, `user_id`, `created_date`, `updated_date`, `created_by`, `updated_by`, `margin_step`) VALUES ('FTAUMAN2021116954', 'ZCOM2021116954', 100.00, 0.0060, 0.00, 100.00, 0.00, 'uGRqlpO5zeRotfYd9vTEag==_1626165460704', 4, '5abd66f3-5f89-4561-998b-1905df2340f4', 2, '3', 1, 2, 'bu', 2, 0, 1, 1, 'CUST202033808344302lu5', 119841, '2021-07-13 16:37:40', '2021-07-13 16:38:02', 0, 0, NULL);
+
+    /**
+     * 格式化成sql
+     *
+     * @param str
+     * @return
+     */
+    @Override
+    public String formatToSql(String str) {
+        String targetStr = "{\"" + str.replaceAll("&", "\",\"").replaceAll("=", "\":\"") + "\"}";
+        log.info("格式化后的字符串为：{}", targetStr);
+        Map<String, String> map = ((Map<String, String>) JSON.parse(targetStr));
+        String sql = "INSERT INTO `custom_uat`.`t_trade_record`" +
+                "(`order_no`, `contact_no`, `pay_money`, `poundage_rate`, `poundage`, `p_money`, `truely_pay`, `local_serial_no`, `serial_no_status`, `pay_serial_no`, `trade_status`, `periods`, `trade_type`, `pay_type`, `bu_or_pa`, `is_penalty`, `announce_result`, `is_push`, `is_handled`, `init_cust_id`, `user_id`, `created_date`, `updated_date`, `created_by`, `updated_by`, `margin_step`) VALUES " +
+                "('%s', 'ZCOM2021116954', %s, %s, %s, %s, 0.00, 'uGRqlpO5zeRotfYd9vTEag==_1626165460704', 4, '%s', 1, '%s', 1, %s, 'bu', 2, 0, 1, 1, '%s', 119841, '%s 16:37:40', '%s 16:38:02', 0, 0, NULL);";
+        String resultStr = String.format(sql, map.get("orderNo"), map.get("pMoney"),
+                map.get("poundageRate"), map.get("poundage"), map.get("pMoney"), map.get("tradeSerialNo"), map.get("periods"), map.get("payType"), map.get("initCustId"), map.get("factdate"), map.get("factdate"));
+        return resultStr;
     }
 }

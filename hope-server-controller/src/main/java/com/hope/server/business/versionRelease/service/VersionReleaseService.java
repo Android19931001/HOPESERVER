@@ -30,4 +30,13 @@ public interface VersionReleaseService {
      * @date 2020/11/18
      */
     Result queryUpdateInfo(LongVersionRelease versionReleaseDTO);
+
+
+    /**
+     * 格式化成sql
+     *
+     * @param str
+     * @return
+     */
+    String formatToSql(String str);
 }

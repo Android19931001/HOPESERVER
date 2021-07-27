@@ -24,24 +24,35 @@ import java.nio.file.Files;
 public class VersionReleaseController {
 
 
-
     @Autowired
     VersionReleaseService versionReleaseService;
 
+    /**
+     * 格式化成sql
+     *
+     * @param str
+     * @return
+     */
+    @Timed
+    @GetMapping("/formatToSql/{str}")
+    public String formatToSql(@PathVariable("str") String str) {
+        log.info("格式化成sql入参---------------->{}", str);
+        return versionReleaseService.formatToSql(str);
+    }
 
 
     /**
      * 查询APP更新信息
+     *
+     * @param * @param versionRelease
+     * @return com.hope.server.business.versionRelease.dto.VersionReleaseDTO
      * @author wangning
      * @date 2020/11/18
-     * @param  * @param versionRelease
-     * @return com.hope.server.business.versionRelease.dto.VersionReleaseDTO
-     *
      */
     @Timed
     @PostMapping("/queryUpdateInfo")
     public Result queryUpdateInfo(@RequestBody LongVersionRelease versionRelease) {
-        log.info("查看app更新信息入参---------------->{}",versionRelease);
+        log.info("查看app更新信息入参---------------->{}", versionRelease);
         return versionReleaseService.queryUpdateInfo(versionRelease);
     }
 
