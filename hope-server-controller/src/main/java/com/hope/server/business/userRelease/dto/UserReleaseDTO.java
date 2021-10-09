@@ -26,23 +26,20 @@ public class UserReleaseDTO extends BaseEntity {
     /**
      * 发布的内容
      */
-    private String reText;
-    /**
-     * 作品图片地址
-     */
-    private String reImgUrl;
-    /**
-     * 作品视频地址
-     */
-    private String reVideoUrl;
-    /**
-     * 发布时间
-     */
-    private String reDate;
+    private String content;
 
     /**
-     * 用户头像
+     * 标题
      */
-    private String headPortraitUrl;
+    private String title;
 
+    /**
+     * 副标题
+     */
+    private String subTitle;
+
+    /**
+     * 用户称呼
+     */
+    private String userName;
 }
