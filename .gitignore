@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .DS_Store
-.idea/workspace.xml
+.idea/*
 hope-server-base/src/main/resources/
 hope-server-base/src/test/
 hope-server-base/target/
