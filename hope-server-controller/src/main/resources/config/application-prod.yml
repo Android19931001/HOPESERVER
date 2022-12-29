@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://hopeuser:hopepassword123@120.48.84.17:1024/eureka/
+      defaultZone: http://hopeuser:hopepassword123@120.48.84.17:1040/eureka/
     instance:
       prefer-ip-address: true
       instance-id: hope-controller-client
@@ -12,8 +12,8 @@ eureka:
 #在application.yml中加入全局调用的变量是使用instance开头，子类就可以根据要求自己定义了
 properties:
   filePath: ${user.home}/data
-  ipAddress: http://120.48.84.17:1042
+  ipAddress: http://120.48.84.17:1040
 instance:
   Service:
     ServiceName: hope-server-service
-    ServiceHost: http://120.48.84.17:1042
+    ServiceHost: http://120.48.84.17:1040

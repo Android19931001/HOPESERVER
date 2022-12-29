@@ -3,7 +3,7 @@ spring:
     gateway:
       routes:
       - id: hope-gateway
-        uri: http://121.36.66.235:1042/hope-controller/
+        uri: http://120.48.84.17:1042/hope-controller/
         predicates:
           - Path=/hope-gateway/**
         filters:
@@ -16,7 +16,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://hopeuser:hopepassword123@120.48.84.17:1024/eureka/
+      defaultZone: http://hopeuser:hopepassword123@120.48.84.17:1040/eureka/
     instance:
       prefer-ip-address: true
       instance-id: hope-gateway-client
