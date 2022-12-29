@@ -32,7 +32,7 @@ node {
     stage('clean') {
         sh "chmod +x mvnw"
         sh "./mvnw clean"
-    }
+    }c
 
 
     stage('packaging') {

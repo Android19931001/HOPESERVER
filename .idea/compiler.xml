@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hope-server-base" />
-        <module name="hope-server-controller" />
-        <module name="hope-server-eureka" />
         <module name="hope-server-gateway" />
-        <module name="hope-server-generator" />
         <module name="hope-server-service" />
+        <module name="hope-server-eureka" />
+        <module name="hope-server-base" />
+        <module name="hope-server-generator" />
+        <module name="hope-server-controller" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -25,5 +25,14 @@
       <module name="hoper-server-service" target="1.8" />
       <module name="HOPESERVER" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hope-server-base" options="-parameters" />
+      <module name="hope-server-controller" options="-parameters" />
+      <module name="hope-server-eureka" options="-parameters" />
+      <module name="hope-server-gateway" options="-parameters" />
+      <module name="hope-server-service" options="-parameters" />
+    </option>
   </component>
 </project>

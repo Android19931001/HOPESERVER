@@ -1,0 +1,18 @@
+# Created by .ignore support plugin (hsz.mobi)
+.DS_Store
+.idea/workspace.xml
+hope-server-base/src/main/resources/
+hope-server-base/src/test/
+hope-server-base/target/
+hope-server-controller/.DS_Store
+hope-server-controller/src/.DS_Store
+hope-server-controller/src/main/.DS_Store
+hope-server-controller/src/main/java/com/hope/server/api/longHopeFile/.DS_Store
+hope-server-eureka/src/main/.DS_Store
+hope-server-gateway/src/main/java/com/hope/server/interceptor/
+hope-server-gateway/src/main/resources/.DS_Store
+hope-server-gateway/src/test/
+hope-server-gateway/target/
+hope-server-generator/src/test/
+hope-server-generator/target/
+hope-server-service/src/main/resources/mapper/api/

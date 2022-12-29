@@ -1,6 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="war" name="hope-server-eureka:war">
     <output-path>$PROJECT_DIR$/hope-server-eureka/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>hope-server-eureka</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="archive" name="eureka-0.0.1-eureka.war">
       <element id="artifact" artifact-name="hope-server-eureka:war exploded" />
     </root>

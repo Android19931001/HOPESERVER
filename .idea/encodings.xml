@@ -3,11 +3,18 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hope-server-base/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-controller" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hope-server-controller/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hope-server-eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hope-server-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-jun" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hope-server-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hope-server-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
