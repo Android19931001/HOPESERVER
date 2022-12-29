@@ -42,4 +42,6 @@ public class UserReleaseDTO extends BaseEntity {
      * 用户称呼
      */
     private String userName;
+
+    private String headPortraitUrl;
 }
