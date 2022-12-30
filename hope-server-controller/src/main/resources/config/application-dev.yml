@@ -12,7 +12,7 @@ eureka:
 #在application.yml中加入全局调用的变量是使用instance开头，子类就可以根据要求自己定义了
 properties:
   filePath: ${user.home}/data
-  ipAddress: http://192.168.43.7:4672
+  ipAddress: http://localhost:4672
 instance:
   Service:
     ServiceName: hope-server-service

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * @author wangning
  */
-@FeignClient(value = "hope-server-service",url = "http://localhost:1041")
+@FeignClient(value = "hope-server-service",url = "http://localhost:4671")
 public interface HopeServiceClient {
 
     /**
