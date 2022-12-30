@@ -3,6 +3,7 @@ package com.hope.server.business.userInfo.web.webservice;
 
 import com.codahale.metrics.annotation.Timed;
 import com.hope.server.business.userInfo.service.UserInfoService;
+import com.hope.server.business.versionRelease.HopeServiceClient;
 import com.server.service.base.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,14 @@ public class ChUserInfoController {
 
     @Autowired
     UserInfoService userInfoService;
+
+    @Autowired
+    HopeServiceClient hopeServiceClient;
+    @Timed
+    @GetMapping("/getUserInfo/{id}")
+    public LongUserInfo getUserInfo(@PathVariable String id){
+        return hopeServiceClient.getUserInfoById(id).getBody();
+    }
 
     /**
      * 用户登录

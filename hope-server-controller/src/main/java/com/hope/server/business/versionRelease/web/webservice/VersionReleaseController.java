@@ -3,7 +3,8 @@ package com.hope.server.business.versionRelease.web.webservice;
 
 import com.codahale.metrics.annotation.Timed;
 import com.hope.server.api.longVersionRelease.dto.LongVersionRelease;
-import com.hope.server.business.versionRelease.dto.VersionReleaseDTO;
+import com.hope.server.business.versionRelease.HopeServiceClient;
+import com.hope.server.business.versionRelease.dto.LongUserInfo;
 import com.hope.server.business.versionRelease.service.VersionReleaseService;
 import com.server.service.base.Result;
 import com.server.service.utils.Res;
@@ -26,6 +27,7 @@ public class VersionReleaseController {
 
     @Autowired
     VersionReleaseService versionReleaseService;
+
 
     /**
      * 格式化成sql

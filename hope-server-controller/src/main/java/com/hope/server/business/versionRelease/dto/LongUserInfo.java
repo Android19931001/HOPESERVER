@@ -1,7 +1,7 @@
-package com.server.service.longUserInfo.domain;
+package com.hope.server.business.versionRelease.dto;
 
-import com.server.service.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.server.service.base.BaseEntity;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,13 +12,11 @@ import lombok.Setter;
  */
 
 @Data
-@Getter
-@Setter
 @TableName("long_user_info")
 public class LongUserInfo extends BaseEntity<LongUserInfo>{
 
     /**
-     * 用户表主键
+     * 用户主键
      */
     private String id;
     /**
@@ -26,25 +24,12 @@ public class LongUserInfo extends BaseEntity<LongUserInfo>{
      */
     private String userName;
     /**
-     * 用户手机号
-     */
-    private String phoneNumber;
-    /**
-     * 用户手机型号
-     */
-    private String phoneType;
-    /**
-     * 用户手机版本号
-     */
-    private String phoneVersion;
-    /**
-     * 用户登录密码
+     * 用户密码
      */
     private String userPwd;
 
-    /**
-     * 用户头像
-     */
+    private String phoneNumber;
+
     private String headPortraitUrl;
 
 }

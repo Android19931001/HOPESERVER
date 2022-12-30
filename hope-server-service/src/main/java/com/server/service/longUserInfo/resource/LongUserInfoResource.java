@@ -80,7 +80,7 @@ public class LongUserInfoResource {
     @Timed
     @GetMapping("/longUserInfo/select/{id}")
     public ResponseEntity<LongUserInfo> selectLongUserInfoById(@PathVariable String id) {
-        logger.info("查询的Id === {}", id);
+        logger.info("service==>查询的Id === {}", id);
         LongUserInfo longUserInfo = longUserInfoService.getById(id);
         return ResponseEntity.ok().body(longUserInfo);
     }
